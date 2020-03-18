@@ -1,0 +1,58 @@
+<!-- show and hide cart button -->
+                 
+
+                   <button type="button" id="toggle-cart" class="success button" onclick="toggleFunction()">Show/hide cart</button>
+                   
+                   <!-- SHOPPING CART -->
+
+ <div id="cartsummary" class="checkout-summary">
+
+<span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span>
+
+ <div class="checkout-summary-title">Cart</div>
+
+<div class="checkout-summary-item">
+  
+  <?Php
+
+// number of items in the cart
+echo "Number of Items in the cart = ".sizeof($_SESSION['name'])." <a href=cart-remove-all.php>Remove all</a><br>";
+
+// list cart items
+while (list ($key, $val) = each ($_SESSION['name'])) { 
+echo "$key -> $val <br>"; 
+}
+?>
+
+</div>
+
+
+      <hr>
+      
+    
+       <div class="checkout-summary-details">
+      <p>Total:>$30</div>
+    
+</div>
+
+
+
+    </div> 
+    
+    <!--toggle cart -->
+
+<script>
+ 
+
+
+
+function toggleFunction() {
+  var x = document.getElementById("cartsummary");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+</script>
