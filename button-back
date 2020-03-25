@@ -1,0 +1,9 @@
+<!-- back button -->
+<button type="button" class="success button" onclick="goBack()">Back</button>
+
+<!--back button using browser history -->
+  <script>
+function goBack() {
+  window.history.back()
+}
+</script>
