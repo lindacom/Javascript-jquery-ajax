@@ -37,3 +37,6 @@ Tutorials
 ==========
 
 https://www.youtube.com/watch?v=rDPU5EYYXmg
+
+Local storage:
+https://www.youtube.com/watch?v=W8SFylZ8Jh4
