@@ -32,3 +32,8 @@ How to sort based on url hash
 4. Listen for when the url is changed
 5.Get the hash value from the url
 6. Combine has values in an array and convert to a string store in a variable and pass to an ajax function
+
+Tutorials
+==========
+
+https://www.youtube.com/watch?v=rDPU5EYYXmg
