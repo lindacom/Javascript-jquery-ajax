@@ -1,0 +1,28 @@
+<!-- timout using set interval function  -->
+
+<p>Time remaining: <span id="time-remaining">2:00</span></p>
+
+
+<script>
+var timeleft = 60 * 2;
+var el = document.getElementById('time-remaining');
+var timerID = setInterval(function() {
+
+var minutes, seconds;
+
+timeleft= timeleft - 1;
+
+minutes = parseInt(timeleft / 60);
+seconds = timeleft % 60;
+
+if (String(seconds).length == 1) {
+seconds = "0" + seconds;
+}
+
+if (timeleft <= 0) {
+clearInterval(timerID);
+}
+
+el.innerHTML = minutes + ":" + seconds;
+}, 1000);
+</script>
