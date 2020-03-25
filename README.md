@@ -40,3 +40,6 @@ https://www.youtube.com/watch?v=rDPU5EYYXmg
 
 Local storage:
 https://www.youtube.com/watch?v=W8SFylZ8Jh4
+
+Introduction to AJAX and JSON
+https://www.youtube.com/watch?v=vz7_6y6zW_M
