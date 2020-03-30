@@ -35,6 +35,19 @@ $( document ).ready(function() {
  
  ```
  
+ Session storage
+ ===============
+ 
+The localStorage and sessionStorage properties allow you to save key/value pairs in a web browser. The sessionStorage object stores data for only one session (the data is deleted when the browser tab is closed). LocalStorage stores data with no expiration date. The data will not be deleted when the browser is closed, and will be available the next day, week, or year.
+
+Saving data to session storage - sessionStorage.setItem("key", "value");
+
+Reading data from session storage - var lastname = sessionStorage.getItem("key");
+
+Remove item from session storage - sessionStorage.removeItem("key");
+
+Clear all data from session storage - sessionStorage.clear();
+ 
  Isotope.js
 ===========
 For information on how to use this library see isotope.metafizzy.co. 
