@@ -1,1 +1,5 @@
 document.getElementsByName("btnGreenCard")[0].setAttribute("disabled", true)
+
+// jquery
+
+$('button[name="btnGreenCard"]').prop('disabled', true);
