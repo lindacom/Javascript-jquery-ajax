@@ -1,0 +1,35 @@
+Click on the icon to run the function which counts items in array and updates the badge counter
+
+// counter badge
+
+<li><a href="#">My Favourites <span class="badge secondary" id="readcount"> 0</span></a></li>
+
+// link
+
+<i onclick="myReadingList(this)" class="fa fa-book" style="margin-right: 15px;" id="myid">                
+                     </i>
+                     
+                     
+<script>
+
+const readinglist = []; //set empty array
+
+function myReadingList(x) { //id is passed in 
+
+    x.classList.toggle("fa-bookmark");//toggle the icon
+    const blogid = x.id; // you can create individual items and pass them all in the const item
+    
+    const item = {
+      blogid
+       };
+    
+    readinglist.push(item); // push item(s) into the array
+    readinglist.sort(); //sort the array alphabetically
+    
+document.getElementById("readcount").innerHTML = readinglist.length; //put the count of bookmarks in counter
+
+localStorage.setItem('myblogs', JSON.stringify(readinglist)); //save the array in local storage of the computer
+ 
+ }
+
+</script>
