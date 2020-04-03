@@ -18,12 +18,12 @@ function myFunction(x) {
       text,
       done: false  };   
 
-    items.push(item); // push item into the items array
-
-var mysavedlist = localStorage.setItem('items', JSON.stringify(items)); //put items array in local storage   
+    items.unshift(item) //push item to beginning of the array
+     
+ var mysavedlist = localStorage.setItem('items', JSON.stringify(items)); //put items array in local storage   
    
    mylist = JSON.parse(localStorage.getItem('items'));  // get items from local storage (using parse to convert to format)
 
-   $('#mylist').css('display', 'inline-block').append(items[0].text); // show the hidden div and display items on the page
+   $('#mylist').css('display', 'inline-block').append(items[0].text); // show the hidden div and display first item on the page
     }
 </script>
