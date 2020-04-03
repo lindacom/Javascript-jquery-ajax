@@ -1,0 +1,29 @@
+<!-- LISTING OF FAVOURITES -->
+
+<div class="table-responsive">
+<table id='mylist' class="table table bordered"></table>
+</div>
+
+<script>
+
+$( document ).ready(function() { //on page load
+     
+      myfav = JSON.parse(localStorage.getItem('myblogs')); //parse and get items from local storage
+
+          for (i = 0; i < myfav.length; i++) { //loop through the items and store blog id value for each item in a variable
+          var id = myfav[i].blogid;
+          
+          var tr_str =  //store the id variable for each item in a variable in row format
+          '<tr>' +
+          '<td>'+ id + '<td>' +
+          '<button type="button" class="danger button">Remove blog from favourites</button>'+
+          '</tr>'
+          ;
+                    
+$("#mylist").append(tr_str); //add the variable rows to the table in the page
+      }
+
+});
+
+
+</script>
