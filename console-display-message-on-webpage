@@ -1,0 +1,12 @@
+Display an error message from ajax request on a webpage
+===============================================
+
+.done(function(response){
+        // what to do when the request is successful         
+    })
+    .catch((error)=>{
+                            console.log({error});
+                        
+                     //  alert(error.responseJSON.message)
+                     $('#ServerErrorDiv').append(error.responseJSON.message)
+                        })
