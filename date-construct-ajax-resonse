@@ -1,0 +1,24 @@
+Changing date format of ajax response data
+==========================================
+
+// get the date in date timestamp format
+
+ for(var i=0; i<response.length; i++){
+                                     var date = new Date(response[i].date_gmt);
+                                     
+ // construct date, month and year 
+                                     
+ var mydate = date.getDate();
+                    var mymonth = date.getMonth();
+                    var myyear = date.getFullYear();
+                    
+   // put date, month and year together
+   var tr_str =
+   '<h4>' +  mydate + '/' + mymonth + '/' + myyear + '</h4>' ;
+   
+   // place the date on the webpage
+    $("#results").append(tr_str);   
+
+                     
+
+            } // end of for loop
