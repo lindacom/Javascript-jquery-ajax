@@ -1,0 +1,20 @@
+<!--SCRIPTS -->
+
+<script>
+var newUrl = 'example.com/books/thankyou.php?ordered=yes';
+
+$('#button').click(function() {
+
+  setTimeout(function() {
+     history.pushState({}, null, newUrl); // add url parameter 'ordered' after five seconds without refreshing the page
+   }, 5000);
+});
+</script>
+
+<script>
+    $('#processed').attr("value", 1); //changes the value from 0 to 1 on a button
+</script>
+   
+<script>
+   window.location.href = window.location.href + "?single"; // adds parameter to existing url on refresh
+  </script>
