@@ -1,0 +1,19 @@
+ // list categories in dropdown
+
+    function load_categories(query = '')
+    {
+         $.ajax({
+        url:"fetchcategories.php",
+        method:"POST",
+        data:{query:query},
+        success:function(data)
+        {
+          $('#category_list').html(data);
+        }
+      });
+    }
+    
+     <select name="category_list" id="category_list" class="form-control">         
+       </select>
+
+     </div> 
