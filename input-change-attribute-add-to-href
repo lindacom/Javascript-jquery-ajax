@@ -1,0 +1,24 @@
+<script>
+
+var myinput = []; //empty array
+
+$('#inputbox').on('input',function() { //detect input in quantity input box
+    $('#inputbox').val('quantity').trigger("change"); // get quantity and trigger a chang event
+});
+
+$(document).on("change",'#inputbox' ,function() { // detect change event on input box
+    var work = $(this).val(); // get the value of the input box and assign it to the variable called work
+    $('#inputbox').attr("value", work); // set input box attribute value to the inputted value
+
+    myinput.push(work); // push the inputted value to the empty myinput array for use by the button click functio
+
+    // button click function 
+    
+              $('.button').on('click',function() {
+                  var _href = $(this).attr("href"); //get the href of the button link
+                   $(this).attr("href", _href + myinput); //add user inputted quantity to the button href as a parameter 
+               });
+
+
+    });
+    </script>
