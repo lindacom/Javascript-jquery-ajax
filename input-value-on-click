@@ -1,0 +1,18 @@
+// button
+<a href="#" id="visa">   <i class="fab fa-cc-visa fa-w-18 fa-3x" style="size:50px"; "color:navy;"></i></a>
+
+//input field
+
+ <label for="ccnum">Card number</label><span class="error">* <?php echo $cardnumberErr;?> <?php echo $cardnumberErr2;?></span>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+
+// javascript
+
+$('#visa').click(function(event){
+        
+        event.preventDefault();
+        var like = 4;
+   // alert(like);
+     $('#ccnum').attr("value", like);
+   
+});
