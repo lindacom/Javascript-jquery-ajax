@@ -1,0 +1,27 @@
+<!-- CHECKBOX CHECK, HASH PARAMETER AND SEARCH -->
+  <script>
+  function marked (param1)     {     
+
+     var filter = []; //set the empty filter array
+     
+     $('.category:checked, .authors:checked, .price:checked').each(function () {   //detect if a checbox with the class category is checked
+      
+    filter.splice(1,1); // delete existing elements in filter array
+      filter.push($(this).val()); // push value of checked box to the filter array  
+     
+          $('.category').not(this).prop('checked', false); // uncheck boxes that are not selected box
+
+     sub = filter[0]; //get the first element in the filter array
+     location.hash = sub; //enter parameter as hash in the url - this works 
+
+
+     query = decodeURIComponent(window.location.hash.substr(1) ); // removes blank spaces from hash and gets the first element after the hash
+     alert(query) ; //alert item in the array
+     load_data(1, query); //send query to the load_data function to filter the book results table
+           });
+        
+           }
+
+  </script>
+  
+  <input class="category-clear-selection category" type="checkbox" id=" Leadership " value=" Leadership " onclick="marked()" "="">
