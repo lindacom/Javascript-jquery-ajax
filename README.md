@@ -53,6 +53,7 @@ Clear all data from session storage - sessionStorage.clear();
 Tutorials
 ==========
 
+Set interval:
 https://www.youtube.com/watch?v=rDPU5EYYXmg
 
 Local storage:
