@@ -1,7 +1,13 @@
-<!-- back button -->
+How to create a back button functionality
+===========================================
+
+Create a button with onclick function 
+--------------------------------------
+
 <button type="button" class="success button" onclick="goBack()">Back</button>
 
-<!--back button using browser history -->
+Add script for back button which uses browser history
+--------------------------------------------------------
   <script>
 function goBack() {
   window.history.back()
