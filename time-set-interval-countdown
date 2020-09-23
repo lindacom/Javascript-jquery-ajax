@@ -1,7 +1,15 @@
+How to count down from a set time
+===================================
+
+Create an element with an id
+------------------------------
+
 <!-- timout using set interval function  -->
 
 <p>Time remaining: <span id="time-remaining">2:00</span></p>
 
+Create a script
+----------------
 
 <script>
 var timeleft = 60 * 2;
