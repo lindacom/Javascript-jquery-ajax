@@ -1,7 +1,12 @@
-<!-- show and hide cart button -->
-                 
+How to toggle between hiding and showing an element
+===================================================
 
-                   <button type="button" id="toggle-cart" class="success button" onclick="toggleFunction()">Show/hide cart</button>
+Create an element with an id which calls a function on click
+-------------------------------------------------------------
+
+<!-- show and hide cart button -->                 
+
+        <button type="button" id="toggle-cart" class="success button" onclick="toggleFunction()">Show/hide cart</button>
                    
                    <!-- SHOPPING CART -->
 
@@ -14,7 +19,6 @@
 <div class="checkout-summary-item">
   
   <?Php
-
 // number of items in the cart
 echo "Number of Items in the cart = ".sizeof($_SESSION['name'])." <a href=cart-remove-all.php>Remove all</a><br>";
 
@@ -23,29 +27,20 @@ while (list ($key, $val) = each ($_SESSION['name'])) {
 echo "$key -> $val <br>"; 
 }
 ?>
-
 </div>
-
-
-      <hr>
-      
+      <hr>    
     
        <div class="checkout-summary-details">
-      <p>Total:>$30</div>
-    
+      <p>Total:>$30</div>    
 </div>
-
-
-
     </div> 
-    
-    <!--toggle cart -->
+        <!--toggle cart -->
+        
+Create a function
+----------------
+Add a function that gets the element to be toggled and checks if display style is none then display othrwise don't display
 
 <script>
- 
-
-
-
 function toggleFunction() {
   var x = document.getElementById("cartsummary");
   if (x.style.display === "none") {
@@ -54,5 +49,4 @@ function toggleFunction() {
     x.style.display = "none";
   }
 }
-
 </script>
