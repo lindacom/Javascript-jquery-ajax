@@ -1,11 +1,21 @@
- <!-- order confirmation button  -->
+ How to create an animated order confirmation button
+ ====================================================
+ 
+ Create the order confirmation button using classes
+ ---------------------------------------------------
+ 
         <div class="ecommerce-loading-button text-center">
         <div class="loading-button">
         <button type="button" class="primary button" data-loading-start>Submit Order</button>
         <button type="button" class="primary button hide" data-loading-end> 
          <i class='fa fa-refresh fa-spin'></i> Processing Order
     </button>
-        </div> <!-- refresh -->
+        </div> 
+        
+  Create the success message that will appear on page refresh
+  ------------------------------------------------------------
+  
+  
        <div data-success-message class="callout success hide">
          Thanks, your order has been processed!
        </div> 
@@ -14,6 +24,13 @@
         
         
         <!--submit order button with success message -->
+
+Add script for functionality
+------------------------------
+
+Looks for data-loading-start button and listens for a click event and hides the button.
+Find the data-loading-end button and make it visible
+Show the success message after a set number of time
 
 
 <script>
