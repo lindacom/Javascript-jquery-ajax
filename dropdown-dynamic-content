@@ -1,3 +1,9 @@
+How to display content based on option selected in dropdown
+============================================================
+
+Create a dropdown
+-----------------
+
 <!-- dropdown-->
 
 <form>
@@ -14,6 +20,9 @@
       </select>
     </div>
   </form>
+
+Create content
+---------------
 
 <!-- dropdown content-->
 <div id="option1" class="country">
@@ -35,13 +44,13 @@
   Large
 </div>
 
-     </div> 
-
-  
+     </div>  
 
 
 
-  <!--script to change content based on dropdown selection -->
+Add script to change content based on dropdown selection 
+--------------------------------------------------------
+
   <script>
 
     $(document).ready(function(){
