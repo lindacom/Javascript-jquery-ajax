@@ -1,5 +1,15 @@
-<div id="name"></div>
+How to get ajax results as json data
+===================================
   
+Create an element in the page with an id
+----------------------------------------
+  <div id="name"></div>
+
+Create an ajax request
+-----------------------
+
+Create an ajax request with dataType set to json
+
   <script>
 $.ajax({
             type: "GET", //rest Type
