@@ -1,18 +1,34 @@
-// button
+How to add a value to an input field when a user click a button
+
+Add Font awesome CDN
+------------------
+
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+Create a button
+-----------------
+
+A visa icon as a button:
 <a href="#" id="visa">   <i class="fab fa-cc-visa fa-w-18 fa-3x" style="size:50px"; "color:navy;"></i></a>
 
-//input field
-
+Create an input field with a id
+--------------------------------
  <label for="ccnum">Card number</label><span class="error">* <?php echo $cardnumberErr;?> <?php echo $cardnumberErr2;?></span>
             <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
 
-// javascript
+Add script
+----------
+
+Add a script that finds the icon and listens for the click event preventing default action then assigns the value of the variable to the value attribute of the
+input field.
+
+<script>
 
 $('#visa').click(function(event){
         
         event.preventDefault();
-        var like = 4;
-   // alert(like);
-     $('#ccnum').attr("value", like);
+        var prefix = 4444;
+        $('#ccnum').attr("value", prefix);
    
 });
+</script>
