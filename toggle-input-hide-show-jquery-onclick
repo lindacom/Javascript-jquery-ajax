@@ -1,0 +1,35 @@
+How to toggle an input field on button click using jquery
+=========================================================
+
+Create an element
+-----------------
+
+Create a button with a id and an input field ith an id.
+
+// BUTTON ON CLICK DISPLAYS INPUT FIELD
+
+ <div class="medium-6 cell">
+        <label><strong>Category </strong> </label></div>
+        <div class="medium-6 cell">
+        <a href="#" id="newtag" class="button">Add new category</a></div>
+       <div class="medium-6 cell">
+          <input type="text" id="addtag" name="category" placeholder="add a new category"style="display:none"> 
+            </div>
+ 
+Create a script
+-----------------
+Create a script that finds the button and listens for a click event, gets the input field and checks if the style display is none then display otherwise don't display.
+
+<script>
+
+    $("#newtag").click(function(){
+   var x = document.getElementById("addtag");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+});
+</script>
+
+
