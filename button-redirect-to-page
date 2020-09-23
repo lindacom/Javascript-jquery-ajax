@@ -1,0 +1,18 @@
+How to create a button that redirects to a page
+=================================================
+    
+Create a button with an id
+---------------------------
+    
+    <button id="myButton" class="float-left submit-button" >Home</button>
+
+Add a script 
+---------------
+
+Add a script that gets the button, listens for the onclick event and sets window location
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "www.yoursite.com";
+    };
+</script>
