@@ -1,4 +1,16 @@
- // list categories in dropdown
+How to list categories in dropdown select field using Ajax
+==============================================================
+
+Create an element with an id
+-----------------------------
+
+```
+  <select name="category_list" id="category_list" class="form-control">         
+       </select>
+```
+
+Get the query from ajax and put in an element
+----------------------------------------
 
     function load_categories(query = '')
     {
@@ -13,7 +25,6 @@
       });
     }
     
-     <select name="category_list" id="category_list" class="form-control">         
-       </select>
+   
 
-     </div> 
+    
