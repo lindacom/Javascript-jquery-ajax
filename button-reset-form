@@ -1,0 +1,18 @@
+How to create a button that resets a form (clears input fields)
+================================================================
+
+Create the form and create a button with an id and an onclick function.
+
+<input type="button" id="billing" onclick="myFunction()" value="Reset">
+
+
+Add a script that resets the form
+---------------------------------
+<!--reset billingform -->
+
+
+<script>
+function myFunction() {
+  document.getElementById("billing").reset();
+}
+</script>
