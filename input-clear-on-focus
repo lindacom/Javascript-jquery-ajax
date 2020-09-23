@@ -1,1 +1,6 @@
+How to clear input box when user enters it
+============================================
+
+e.g. you may want to use this to remove previous search text
+
 <input type="text" onfocus="this.value=''" value="Blabla">
