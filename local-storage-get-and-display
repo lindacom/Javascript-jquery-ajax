@@ -1,9 +1,19 @@
+How to get items from local storage and display on a webpage
+=============================================================
+
+Create an element with an id
+----------------------------
+
 <!-- LISTING OF FAVOURITES -->
 
 <div class="table-responsive">
 <table id='mylist' class="table table bordered"></table>
 </div>
 
+Create a jquery script 
+-----------------------
+
+Create a jquery script that gets the item by keyname from localstorage, loops over the items and assigns the values to a variable, apped the items to the element.
 <script>
 
 $( document ).ready(function() { //on page load
