@@ -1,0 +1,6 @@
+How to change the value attriute of an element
+================================================
+
+<script>
+    $('#processed').attr("value", 1); //changes the value from 0 to 1 on a button
+</script>
