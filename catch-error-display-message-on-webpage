@@ -1,6 +1,14 @@
 Display an error message from ajax request on a webpage
 ===============================================
 
+Create an element in the page with an id
+------------------------------------------
+
+In the ajax request catch the error
+------------------------------------
+
+Catch the error and send it to console. Append the error to the element in the webpage.
+
 .done(function(response){
         // what to do when the request is successful         
     })
