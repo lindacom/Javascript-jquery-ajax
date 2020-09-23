@@ -1,5 +1,8 @@
-<script> 
-   // catch enter code in search form in front page, add url parameters and redirect to another page  
+How to get the value in a search box and add it to a url as a parameter
+=======================================================================
+   
+   <script> 
+   // catch entered code in search form, add url parameters and redirect to another page  
 
    $('#search').keyup(function (e) {
     var str = $('#search').val();
