@@ -1,3 +1,6 @@
+How to get the value of the quantity input box and add it to the url
+====================================================================
+
 <script>
 
 var myinput = []; //empty array
