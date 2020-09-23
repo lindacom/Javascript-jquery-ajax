@@ -1,5 +1,12 @@
+How to disable a button
+=========================
+
+Using JavaScript
+-----------------
+
 document.getElementsByName("btnGreenCard")[0].setAttribute("disabled", true)
 
-// jquery
+Using jquery
+-------------
 
 $('button[name="btnGreenCard"]').prop('disabled', true);
