@@ -1,22 +1,33 @@
+How to count items in local storage and display in a badge
+============================================================
+
 Click on the icon to run the function which counts items in array and updates the badge counter
 
-// counter badge
+Create a counter badge with an id
+----------------------------------
 
 <li><a href="#">My Favourites <span class="badge secondary" id="readcount"> 0</span></a></li>
 
-// link
+Create an element that sends a parameter to a function
+--------------------------------------------------
 
 <i onclick="myReadingList(this)" class="fa fa-book" style="margin-right: 15px;" id="myid">                
                      </i>
                      
-                     
+Create a function
+-----------------
+
+Create a function that accepts the parameter and assigns it to a constant,  push the item to the array and sort, save the array in local storage.
+enter the length of the array in the counter
+
+
 <script>
 
 const readinglist = []; //set empty array
 
-function myReadingList(x) { //id is passed in 
+function myReadingList(x) { //id is passed in as a parameter
 
-    x.classList.toggle("fa-bookmark");//toggle the icon
+    x.classList.toggle("fa-bookmark"); //toggle the icon
     const blogid = x.id; // you can create individual items and pass them all in the const item
     
     const item = {
@@ -28,7 +39,7 @@ function myReadingList(x) { //id is passed in
     
 document.getElementById("readcount").innerHTML = readinglist.length; //put the count of bookmarks in counter
 
-localStorage.setItem('myblogs', JSON.stringify(readinglist)); //save the array in local storage of the computer
+localStorage.setItem('myblogs', JSON.stringify(readinglist)); //save the array in local storage of the computer with the key (my blogs)
  
  }
 
