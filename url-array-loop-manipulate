@@ -1,0 +1,28 @@
+How to loop through an array of urls 
+====================================
+
+How to loop through an array of urlsand extract part of the url from a specified starting position.
+
+var urls = [
+`http://example.com`,
+`http://example.com`,
+`http://example.com`,
+`http://example.com`,
+];
+
+// loop through urls
+
+output = '<ul>';
+
+for (var i = 0; i < urls.length; i++) {
+
+output += '<li>' +
+// urls[i].split('/') + //strips slashes from url and separates by comma
+urls[i].substr(47) +
+'</li>'
+
+}
+
+output += '</ul>'
+
+document.getElementById('url').innerHTML = output;
