@@ -1,3 +1,72 @@
+Variables and data strutures
+============================
+Sets - collection of unique values.  Methods that can be used ith et include .size and .has 
+
+```
+let books = new set();
+books.add('history');
+console.log(books);
+```
+Map - holds key value pairs. Use .set to set keys ad values Access items by using.keys or .values. Methods that can be used with map include .foreach
+
+```
+let course = new map();
+course.set('java', {description: 'ui'})
+```
+Template strings - variables are displayed as ${variable}. When using in a sentece the string is wrapped around both the string text ad the variable using backticks.
+The benefit of using a template string is that it recognises spacing and formatting  You also don'ot need to use th plus symbol to join string and text.
+N.b. use to $$ symbols to display currency for a variable.
+
+const - a variable which cannot be changed
+let - changes pulic variable without affecting original variable value.
+
+Arrays
+======
+Spread operator - to add an array into another array use a spread operator (three dots). e.g. ["ham", ...name]
+
+Objects
+=======
+You can access object properties using dot notation e.g. book.title
+Spread operator - you can use a spread operator ith objects.  The benefits are the items have their own keys rather than being nested within an array.
+
+Classes - create a class ith a constructor inside. Set properties with this e.g. this.desciption = description;To inherit a class use extends keyword. Create a method. 
+You can use get and set methods on class values.
+
+Functions
+=========
+Available functions include.map, .join
+
+Asynchronous JavaScript
+-----------------------
+Promise - Promises re used to load data. Resolve is what happens when true then executes. 
+
+Promise with fetch - you can retur proises with fetch function.  In a function enter:
+
+```
+fetch("http://example.com").then((res) => res.json() );
+```
+
+Fetch can be used instead of an http request.
+
+Async - Async function uses the async keyword.  It waits for the function to complete before sending response using await keyword. The benefit is it uses less resources
+
+Fetch with async/await:
+
+```
+const githubRequest = async(login) => {
+let response = await fetch(`https://api.github/users/${login}`);
+let json = await response.json();
+let summary = `${json.name}, ${json.company}`;
+console.log(summary);
+};
+```
+To call enter:
+
+```
+githubRequest("githubusername");
+```
+
+
 Return JSON response from AJAX using jQuery and PHP
 ======================================================
 ```
@@ -34,6 +103,10 @@ $( document ).ready(function() {
  });
  
  ```
+ 
+ String methods
+ ===============
+ methods that can be used include .starts with, .ends with, .includes and .search.
  
  Session storage
  ===============
