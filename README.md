@@ -120,6 +120,11 @@ Reading data from session storage - var lastname = sessionStorage.getItem("key")
 Remove item from session storage - sessionStorage.removeItem("key");
 
 Clear all data from session storage - sessionStorage.clear();
+
+Reload window on click
+=======================
+
+onClick="window.location.reload();
  
 
 
