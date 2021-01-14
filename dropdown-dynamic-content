@@ -70,3 +70,11 @@ Add script to change content based on dropdown selection
   });
   
 }); </script>
+
+dropdown change filter
+=======================
+
+     $('#category_list').change(function(){
+          var query = $(this).val();
+load_data(1, query);
+    });
