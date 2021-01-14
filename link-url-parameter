@@ -1,0 +1,2 @@
+var _href = $(this).attr("href"); //get the href of the clicked button link
+                $(this).attr("href", _href + myinput); //add user inputted quantity to the button href as a parameter 
