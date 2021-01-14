@@ -1,0 +1,11 @@
+hyperlink click:
+$("#featured").click(function(){
+    $.ajax({
+        url: "fetchfeatured.php",
+        method: "POST",
+        data: 'id=' + $(this).attr('value'),
+        success: function(data){
+            $("#dynamic_content").html(data);
+        }
+    });
+});
