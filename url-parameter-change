@@ -49,3 +49,21 @@ Conditional url change based on select option selected
       
   });
     </script>
+    
+    Search input box insert value as url parameter on button click
+    =======================================================
+    <!-- search box -->
+    <div>
+    <label for="site-search">Search by customer:</label>
+<input type="search" id="site-search" name="q"
+       aria-label="Search orders by customer">
+
+<button type="button" class="secondary button" id="customer-search">Search</button> </div>
+
+<script>
+ $("#customer-search").click(function(){
+        var me = $("#site-search").val();
+        
+  window.location.href = newUrl + "?id=" + me;
+    });
+</script>
