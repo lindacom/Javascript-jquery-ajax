@@ -17,8 +17,35 @@ $('#button').click(function() {
 
 
 How to change the url parameter on refresh
-============================================================
+===========================================
    
 <script>
    window.location.href = window.location.href + "?single"; // adds parameter to existing url on refresh
   </script>
+  
+Conditional url change based on select option selected
+=======================================================
+
+<script>
+
+    var newUrl = 'http://lindacom.infinityfreeapp.com/books/orders.php';
+
+ $("#orders").change(function(){
+     
+     if($("#orders").val() == "all") {
+   window.location.href = newUrl + "?all";
+     } else if($("#orders").val() == "date") {
+   window.location.href = newUrl + "?date";
+     }else if($("#orders").val() == "books") {
+   window.location.href = newUrl + "?books";
+     }
+     else if($("#orders").val() == "favourite") {
+   window.location.href = newUrl + "?favourite";
+     } else {
+         alert('this selection is not available');
+     }
+
+     
+      
+  });
+    </script>
