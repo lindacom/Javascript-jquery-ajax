@@ -1,9 +1,15 @@
 How to create a button that resets a form (clears input fields)
 ================================================================
 
-Create the form and create a button with an id and an onclick function.
+Create the form with id and create a button with an onclick function.
 
-<input type="button" id="billing" onclick="myFunction()" value="Reset">
+<form action="" id="billing">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="enter a name"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="enter a last name"><br><br>
+  <input type="button" onclick="myFunction()" value="Reset">
+</form> 
 
 
 Add a script that resets the form
