@@ -1,0 +1,11 @@
+<button type="button" class="button" onmouseover="mOver(this)" onmouseout="mOut(this)">Mouseover</button>
+
+<script>
+ function mOver(obj) {
+  obj.innerHTML = "Thank You"
+}
+
+function mOut(obj) {
+  obj.innerHTML = "Mouse Over Me"
+}
+</script>
