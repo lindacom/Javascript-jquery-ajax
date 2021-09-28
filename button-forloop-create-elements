@@ -1,0 +1,15 @@
+<h2>Create elements</h2>
+      <div id="buttonsContainer"></div>
+
+  <script>
+    const buttonsContainer = document.getElementById("buttonsContainer");
+
+for (var i=0; i <5; i++) {
+const button = document.createElement("button");
+button.innerText = i;
+
+buttonsContainer.appendChild(button);
+}
+
+
+</script>
