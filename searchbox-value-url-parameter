@@ -8,7 +8,7 @@ How to get the value in a search box and add it to a url as a parameter
     var str = $('#search').val();
     var domain = "http://lindacom.infinityfreeapp.com/books/bookdetails.php";
     var url = domain+"?search=" + str;
-    if (e.keyCode == 13) {
+    if (e.keyCode == 13) { //keycode 13 is the enter key
         location.href = url;
     }
 });
