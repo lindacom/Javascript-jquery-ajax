@@ -131,6 +131,9 @@ onClick="window.location.reload();
 Tutorials
 ==========
 
+url search parameters:
+https://flaviocopes.com/urlsearchparams/
+
 Set interval:
 https://www.youtube.com/watch?v=rDPU5EYYXmg
 
