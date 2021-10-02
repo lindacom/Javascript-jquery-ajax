@@ -1,3 +1,14 @@
+ put item in local storage
+ ============================
+ 
+ // put item in local storage using setitem. N.b. to check local storage in browser tools go to application > local storage
+   
+   document.getElementById("button").addEventListener("click", function mySongOne() {
+  
+  localStorage.setItem("favsong", "<a href=''><h1>song1</h1></a>");
+
+});
+
 How to get items from local storage and display on a webpage
 =============================================================
 
