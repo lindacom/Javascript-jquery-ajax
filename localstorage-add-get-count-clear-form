@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- tutorial https://www.youtube.com/watch?v=k8yJCeuP6I8&t=3s -->
+<html>
+<head>
+<title>Local storage</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://lindacom.infinityfreeapp.com/javascript-playground/jsplay.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h1>Local storage</h1>
+
+    <h2>Add items</h2>
+
+    <p>Click the button to add an item to local storage.</p>
+    <fieldset>
+<legend>Input data</legend>
+<input id="inpKey" type="text" placeholder="enter key...">
+<input id="inpValue" type="text" placeholder="enter value...">
+<button id="btnInsert" class="button">Insert data</button>
+</fieldset>
+
+<h2>Get items</h2>
+
+      <p>The number of items in local storage are:</p>
+
+    <p>My Favourites<span class="fas fa-badge" id="readcount">0</span></p>
+    
+     
+
+    <p>The following items are stored in local storage: </p>
+
+<fieldset>
+<legend>Latest item in Local Storage</legend>
+<div id="lsOutput"></div>
+</fieldset>
+
+<fieldset>
+<legend>All items in Local Storage</legend>
+<button id="btnShow" class="button">show all items</button>
+<p id="demo"></p>
+</fieldset>
+
+<h2>Clear items</h2>
+<button id="btnClear" class="button" style="float: right;">Clear all items from localstorage</button>
+
+
+    <script>
+       
+        const inpKey = document.getElementById("inpKey");
+const inpValue = document.getElementById("inpValue");
+const btnInsert = document.getElementById("btnInsert");
+const lsOutput = document.getElementById("lsOutput");
+
+btnInsert.onclick = function() {
+ const key = inpKey.value;
+const value = inpValue.value;
+
+ // put items in local storage on button click (if the fields are not empty)
+
+if(key && value){
+localStorage.setItem(key, value);
+
+location.reload(); //refresh the page
+}
+};
+
+// get items from local storage
+for (let i=0; i < localStorage.length; i++) {
+
+ const key = localStorage.key(i);
+ const value = localStorage.getItem(key);
+
+lsOutput.innerHTML =  key + ': &nbsp' + value;
+};
+
+
+// count items in local storage
+    document.getElementById("readcount").innerHTML = localStorage.length; //put the count of bookmarks in counter
+
+btnShow.onclick = function displayItems() {
+  var l, i;
+  document.getElementById("demo").innerHTML = "";
+  for (i = 0; i < localStorage.length; i++) {
+  x = localStorage.key(i);
+ // y = localStorage.getItem(key);
+  document.getElementById("demo").innerHTML += x  + "<br>";
+  }
+}
+
+// clear localstorage
+btnClear.onclick = function clearItems() {
+localStorage.clear();
+location.reload(); //refresh the page
+}
+
+</script>
+
+
+
+</body>
+</html>
