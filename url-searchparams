@@ -1,0 +1,33 @@
+<script>
+    // URL SEARCH PARAMS (you can either pass a string or an object)
+
+// 1. pass string to the searchparams object
+   /* const queryStr = 'name=Dom&age=45&occupation=software+developer';
+    const usp = new URLSearchParams(queryStr) // creates an instance of query string for manipulation using get, set and to string methods */
+
+// 2. pass an object to construct the query string using the searchparams object
+const usp = new URLSearchParams({
+    name: 'julie',
+    age: 22,
+    occupation: 'junior'
+})
+
+
+// get a value from the query string using get method
+const myName = usp.get('name')
+console.log(myName)
+
+// update or create a new key value pair in query string using set method
+
+usp.set('name', 'jeff') 
+usp.set('youtube', 'decode')
+
+// loop over key value pairs in the query string
+for (const [key, value] of usp){
+console.log(key, value)
+}
+
+// converts the object to string useful for making http requests
+
+ console.log(usp.toString()); 
+    </script>
