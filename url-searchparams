@@ -31,3 +31,22 @@ console.log(key, value)
 
  console.log(usp.toString()); 
     </script>
+    
+Search box, url parameters, alert
+=====================================
+
+ <form class="example" action="http://lindacom.infinityfreeapp.com/javascript-playground/urlparam.html">
+  <input type="search" placeholder="Search.." name="search" id="mySearch">
+ <!-- <button  type="submit" id="button"><i class="fa fa-search"></i></button> -->
+</form>
+
+<script>
+// pass a query string from the url in the browser and iterate over params
+
+    /*   document.getElementById("mySearch").addEventListener("search", function() {
+const params = new URLSearchParams(window.location.search)
+for (const [key, value] of params) {
+  alert(value)
+}
+});
+</script>
