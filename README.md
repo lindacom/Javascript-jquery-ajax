@@ -136,7 +136,6 @@ The throw statement lets you create custom errors.
 
 The finally statement lets you execute code, after try and catch, regardless of the result.
 JavaScript Error object provides error information and has two properties: name and message.
- 
 
 
 Tutorials
@@ -153,3 +152,6 @@ https://www.youtube.com/watch?v=W8SFylZ8Jh4
 
 Introduction to AJAX and JSON
 https://www.youtube.com/watch?v=vz7_6y6zW_M
+
+Introduction to JavaScript Fetch
+https://developers.google.com/web/updates/2015/03/introduction-to-fetch
