@@ -1,0 +1,44 @@
+Using the Fetch API
+===================
+
+   <div id="placeholder"></div>
+    
+    <script>
+
+fetch('https://jsonplaceholder.typicode.com/todos')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+          var len = data.length;
+                for(var i=0; i<len; i++){
+          var id = data[i].id;
+          var title = data[i].title;
+          var user = data[i].userId;
+
+          var todo = "<p>" + 
+          id + 
+          "< /br>" + 
+          title + 
+          "< /br>" + 
+          user + 
+          "</p>";
+
+         document.getElementById('placeholder').append(todo);
+      
+      }
+         console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+
+  </script>
