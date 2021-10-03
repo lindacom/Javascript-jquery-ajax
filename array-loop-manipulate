@@ -1,6 +1,8 @@
 How to loop through an array of urls 
 ====================================
 
+<p id="url"></p>
+
 How to loop through an array of urlsand extract part of the url from a specified starting position.
 
 var urls = [
