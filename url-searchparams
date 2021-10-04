@@ -1,3 +1,69 @@
+  <!DOCTYPE html>
+  <!-- tutorial: https://www.youtube.com/watch?v=-D5YGTkTBH4 add and remove key value pairs from a query string 
+     using the url search params object -->
+<html>
+<head>
+<title>Url parameters</title>
+<link rel="stylesheet" href="/javascript-playground/jsplay.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <h1>Url parameters</h1>
+
+    <h2>Hash parameter</h2>
+    
+    <div>
+    <input class="category"  type="checkbox" id="english" name="english" onClick="checkSubject(this.name)"
+     "  > <label for="english">English</label>
+     </div>
+      <div>
+    <input class="category"  type="checkbox" id="maths" name="maths" onClick="checkSubject(this.name)"
+     "  > <label for="maths">Maths</label>
+     </div>
+      <div>
+    <input class="category"  type="checkbox" id="french" name="french" onClick="checkSubject(this.name)"
+     "  > <label for="french">French</label>
+     </div>
+      <div>
+    <input class="category"  type="checkbox" id="history" name="history" onClick="checkSubject(this.name)"
+     "  > <label for="history">History</label>
+     </div>
+
+     <h2>Search parameter - query strings</h2>
+     
+
+     <form class="example" action="/javascript-playground/urlparam.html">
+  <input type="search" placeholder="Search.." name="search" id="mySearch">
+ <!-- <button  type="submit" id="button"><i class="fa fa-search"></i></button> -->
+</form>
+
+<p id="term"></p>
+
+<script>
+// checkbox name value to url
+     function checkSubject (subject)     {  
+          
+      location.hash = subject;     
+ 
+      var categoryElements = document.getElementsByClassName("category");
+
+    for (var i = 0; i < categoryElements.length; i++) {
+
+        if(categoryElements[i].id !== subject) {
+             categoryElements[i].checked = false;
+        } else {
+             categoryElements[i].checked = true;
+        }
+       
+    }
+ 
+  } 
+      
+</script>
+
 <script>
     // URL SEARCH PARAMS (you can either pass a string or an object)
 
@@ -11,6 +77,32 @@ const usp = new URLSearchParams({
     age: 22,
     occupation: 'junior'
 })
+
+// 1a. pass a query string from the url in the browser to the searchparams object
+/*document.getElementById("button").addEventListener("click", function() {
+    const params = new URLSearchParams(window.location.search);
+    params.get('search');
+    alert(params);
+});*/
+
+// 1b. pass a query string from the url in the browser and iterate over params
+
+setTimeout(myFunction, 3000)
+
+      document.getElementById("mySearch").addEventListener("search", function() {
+          setTimeout(myFunction, 3000)
+          });
+
+          function myFunction() {
+  
+  const params = new URLSearchParams(window.location.search)
+
+for (const [key, value] of params) {
+   document.getElementById("term").innerHTML = 'you searched for:' + value;
+}
+}
+
+// });
 
 
 // get a value from the query string using get method
@@ -31,22 +123,6 @@ console.log(key, value)
 
  console.log(usp.toString()); 
     </script>
-    
-Search box, url parameters, alert
-=====================================
 
- <form class="example" action="http://lindacom.infinityfreeapp.com/javascript-playground/urlparam.html">
-  <input type="search" placeholder="Search.." name="search" id="mySearch">
- <!-- <button  type="submit" id="button"><i class="fa fa-search"></i></button> -->
-</form>
-
-<script>
-// pass a query string from the url in the browser and iterate over params
-
-    /*   document.getElementById("mySearch").addEventListener("search", function() {
-const params = new URLSearchParams(window.location.search)
-for (const [key, value] of params) {
-  alert(value)
-}
-});
-</script>
+</body>
+</html>
