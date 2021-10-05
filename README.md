@@ -108,8 +108,22 @@ $( document ).ready(function() {
  ===============
  methods that can be used include .starts with, .ends with, .includes and .search.
  
+ Client side storage
+ ====================
+ Web storage:
+ Local storage - stores forever
+ Session storage - stores unti browser is cloed
+ 
+ IndexedDB - ful database with structured data with support for images. Has max local storage size
+ indexed with key, object oriented.
+ Web storage is used to set, remove or get data
+ 
+ When to use
+ no privacy, maintain state - use local storage e.g. shopping cart
+ need privacy - session storage
+ 
  Session storage
- ===============
+-----------------
  
 The localStorage and sessionStorage properties allow you to save key/value pairs in a web browser. The sessionStorage object stores data for only one session (the data is deleted when the browser tab is closed). LocalStorage stores data with no expiration date. The data will not be deleted when the browser is closed, and will be available the next day, week, or year.
 
