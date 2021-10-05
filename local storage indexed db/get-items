@@ -1,5 +1,5 @@
 let db;
-get elements; // use getElementById to get all the elements needed
+get elements;
 window.onload = () -> {
 let request = window.indexedDB.open('contacts', 1);
 
@@ -26,5 +26,46 @@ let objectStore = db.createObjectStore('contacts', (
        unique:false
        });
        }
+       
+       // create items in indexedDB
+       form.onSubmit = addData;
+       
+       function displayData() {
+       while(list.firstChild) {  // ul elemet
+          list.removeChild(list.firstChild);
+          }
+          
+          let objectStore = db.transaction('contacts').objectStore('contacts');
+          
+          objectStore.openCursor().onsuccess = functioon (e) {
+          
+            let cursor = e.target.result;
+            
+            if(cursor) {
+              let listItem = document.createElement('li');
+              let first = document.createElement('p');
+              let last = document.createEleet('p');
+              
+              listItem.appendChild(first);
+              listItem.appendChild(last);
+              
+              list.appendChild(listItem);
+              first.textContent = cursor.value.firstName;
+              last.textContent = cursor.value.lastName;
+              
+              listItem.setAttribute(data-contact-id', cursor.value.id);
+              
+              cursor.continue();
+              } else {
+              if(!list.firstChild) {
+                let listItem = document.createElement('li');
+                
+                listItem.textContent = 'no contacts';
+                
+                list.appendChild(listItem);
+     
+       
+       
+       
 
 }
