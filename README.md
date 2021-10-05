@@ -135,6 +135,34 @@ Remove item from session storage - sessionStorage.removeItem("key");
 
 Clear all data from session storage - sessionStorage.clear();
 
+IndexedDB
+-------------
+using dexie.js library
+
+Dexie.js is a wrapper for indexedDB. see information at dexie.org
+
+to use the library:
+
+1. put script tag in the head of the htm file
+2. initiate the database in the javascript file
+3. view application > indexedDB in the browser
+
+```
+const db = new Dexie('MyDatabase');
+
+db.version(1).stores({
+  contacts: '++id', firstName, lastName'     // ++ means autoincrement
+  });
+  
+  // add items
+  
+  db.contacts.put({
+     firstName: "Manny", lastName: "henric"
+     });
+     
+     
+
+
 Reload window on click
 =======================
 
