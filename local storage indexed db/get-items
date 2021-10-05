@@ -1,0 +1,30 @@
+let db;
+get elements; // use getElementById to get all the elements needed
+window.onload = () -> {
+let request = window.indexedDB.open('contacts', 1);
+
+request.onerror = function () {
+console.log('db failed');
+}
+
+request.onsuccess = function () {
+console.log('db opened');
+db = request.result;
+}
+
+
+
+// define index and schema
+
+request.onupgradeneeded = function (e) {
+let db = e.target.result;
+let objectStore = db.createObjectStore('contacts', (
+    keyPath: 'id', autoIncrement: true 
+    {)
+    
+    objectStore.createIndex('firstName', 'firstName', {
+       unique:false
+       });
+       }
+
+}
