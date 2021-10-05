@@ -75,7 +75,12 @@ let objectStore = db.createObjectStore('contacts', (
      function deleteItem (e) {
      let contactId = Number(e.targetparentNode.getAttribute('data-contact-id');
      
-     
+       let transaction = db.transaction('contacts'), 'readwrite');
+            
+            let objectStore = transaction.objectStore('contacts');
+            
+                   
+            let request = objectStore.delete(contacts);
        
        
        
