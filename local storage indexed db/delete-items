@@ -81,7 +81,10 @@ let objectStore = db.createObjectStore('contacts', (
             
                    
             let request = objectStore.delete(contacts);
-       
+        transaction.oncomplete = () => {
+        e.target.parentNode, parentNode.removeChild(e.targetparentNode);
+            console.log('completed);
+            }
        
        
 
