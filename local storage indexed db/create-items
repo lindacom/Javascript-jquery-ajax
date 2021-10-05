@@ -1,0 +1,65 @@
+let db;
+get elements;
+window.onload = () -> {
+let request = window.indexedDB.open('contacts', 1);
+
+request.onerror = function () {
+console.log('db failed');
+}
+
+request.onsuccess = function () {
+console.log('db opened');
+db = request.result;
+}
+
+
+
+// define index and schema
+
+request.onupgradeneeded = function (e) {
+let db = e.target.result;
+let objectStore = db.createObjectStore('contacts', (
+    keyPath: 'id', autoIncrement: true 
+    {)
+    
+    objectStore.createIndex('firstName', 'firstName', {
+       unique:false
+       });
+       }
+       
+       // create items in indexedDB
+       form.onSubmit = addData;
+       
+       function addData (e) {
+          e.preventDefault ();
+          
+          // new object from html form
+          
+          let newItem = {firstName:firstNameInput.value,
+            lastName: lastNameInput.value),
+            
+            let transaction = db.transaction('contacts'), 'readwrite');
+            
+            let objectStore = transaction.objectStore('contacts');
+            
+            // pass item
+            
+            let request = objectStore.add(newItem);
+            
+            request.onsuccess = () => {
+            firstNameInput.value = '';
+            lastNameInput.value = '';
+            
+            transaction.oncomplete = () => {
+            console.log('completed);
+            }
+            
+            transaction.onerror = () => {
+            console.log('not completed);
+            }
+            }
+       
+       
+       
+
+}
