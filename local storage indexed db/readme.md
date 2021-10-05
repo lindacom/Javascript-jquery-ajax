@@ -6,9 +6,10 @@ indexedDB
 4. in the browser go to application > indexedDB. Nb. may need to delete database and refresh page.
 5. define indes and schema in the javascript 
 6. Add new items to indexedDB
-7. Delete items from indexedDB
-8. In the form on the html pag enter name and subit
-9. refresh the console to see input in indexedDB
+7. Get items from indexedDB
+8. Delete items from indexedDB
+9. In the form on the html pag enter name and subit
+10. refresh the console to see input in indexedDB
 
 Create a database
 =================
