@@ -86,6 +86,12 @@ let objectStore = db.createObjectStore('contacts', (
             console.log('completed);
             }
        
-       
+        if(!list.firstChild) {
+                let listItem = document.createElement('li');
+                
+                listItem.textContent = 'no contacts';
+                
+                list.appendChild(listItem);
+                }
 
 }
