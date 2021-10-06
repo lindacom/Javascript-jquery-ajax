@@ -26,8 +26,49 @@ Spread operator - to add an array into another array use a spread operator (thre
 
 Objects
 =======
+
+An object is a variable which can contain many values. Values are written as key value pairs and separated by a comma.  An object has properties and methods. Declare an object using the const keyword.
+
+```
+var colors = (
+black:0,
+white:255,
+);
+console.log(colors)
+```
+```
+var colors = ();
+colors.black = 0;
+colors.white = 255;
+console.log(colors.black);
+```
+object properties
+------------------
+
 You can access object properties using dot notation e.g. book.title
+you can access object properties like book["title"]; also
+
 Spread operator - you can use a spread operator ith objects.  The benefits are the items have their own keys rather than being nested within an array.
+
+Object methods
+-------------
+Methods are stored in properties as function definitions.A method is a function stored as a property.
+
+```
+const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+```
+
+You access an object method with the following syntax: objectName.methodName()
+
+classes
+---------
 
 Classes - create a class ith a constructor inside. Set properties with this e.g. this.desciption = description;To inherit a class use extends keyword. Create a method. 
 You can use get and set methods on class values.
@@ -102,7 +143,7 @@ $( document ).ready(function() {
     });
  });
  
- ```
+```
  
  String methods
  ===============
