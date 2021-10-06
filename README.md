@@ -6,12 +6,14 @@ Sets - collection of unique values.  Methods that can be used ith et include .si
 let books = new set();
 books.add('history');
 console.log(books);
+
 ```
 Map - holds key value pairs. Use .set to set keys ad values Access items by using.keys or .values. Methods that can be used with map include .foreach
 
 ```
 let course = new map();
-course.set('java', {description: 'ui'})
+course.set('java', {description: 'ui'});
+
 ```
 Template strings - variables are displayed as ${variable}. When using in a sentece the string is wrapped around both the string text ad the variable using backticks.
 The benefit of using a template string is that it recognises spacing and formatting  You also don'ot need to use th plus symbol to join string and text.
@@ -34,13 +36,15 @@ var colors = (
 black:0,
 white:255,
 );
-console.log(colors)
+console.log(colors);
+
 ```
 ```
 var colors = ();
 colors.black = 0;
 colors.white = 255;
 console.log(colors.black);
+
 ```
 object properties
 ------------------
@@ -63,6 +67,7 @@ const person = {
     return this.firstName + " " + this.lastName;
   }
 };
+
 ```
 
 You access an object method with the following syntax: objectName.methodName()
@@ -85,6 +90,7 @@ Promise with fetch - you can retur proises with fetch function.  In a function e
 
 ```
 fetch("http://example.com").then((res) => res.json() );
+
 ```
 
 Fetch can be used instead of an http request.
@@ -100,11 +106,13 @@ let json = await response.json();
 let summary = `${json.name}, ${json.company}`;
 console.log(summary);
 };
+
 ```
 To call enter:
 
 ```
 githubRequest("githubusername");
+
 ```
 
 
@@ -201,7 +209,7 @@ db.version(1).stores({
      firstName: "Manny", lastName: "henric"
      });
      
-     
+```     
 
 
 Reload window on click
@@ -223,6 +231,8 @@ JavaScript Error object provides error information and has two properties: name 
 
 Tutorials
 ==========
+JavaScript tutorials:
+https://www.youtube.com/watch?v=iWOYAxlnaww&list=PL4cUxeGkcC9haFPT7J25Q9GRB_ZkFrQAc
 
 url search parameters:
 https://flaviocopes.com/urlsearchparams/
