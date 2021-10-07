@@ -24,7 +24,71 @@ let - changes pulic variable without affecting original variable value.
 
 Arrays
 ======
+Arrays are lists. JavaScript array methods are includes, some, every etc.
+
+some() and every() return a boolean value and can be used to compare multiple items in array
+
+Find only returns the coparison for one item in the array.
+
 Spread operator - to add an array into another array use a spread operator (three dots). e.g. ["ham", ...name]
+
+stacks and queues
+-----------------
+array methods are push and pop. The methods add and remove data from an array.
+
+push - adds to end of array
+pop - pops the last item out of the array
+
+queue - first in, first out.  uses unshift and shift to add and remove from beginning of array.
+
+Map
+---
+map - this method returns new array based on the function of each element in array. e.g.
+
+```
+movies = ["jaws", "thriller", "batman"];
+
+const movieTitles = movies.map((movie)-> movie.title);
+
+console.log(movieTitles);
+
+```
+
+Filter
+------
+e.g. return items that meet criteria
+
+```
+movies = ["jaws", "thriller", "batman"];
+
+const films = movies.filter((movie) => movie.rating === PG-13;
+
+console.log(films);
+
+```
+
+Reduce
+-----
+reduce each value returning single value. e.g. total all items in an array. Find out how many items meet criteria
+The structure for the array method is as follows:
+
+array.reduce(accumulator, current value, index, array), initial vaue
+
+N.b. index, array and initial values are optional
+
+```
+const sales = [2.50, 4, 5.50, 1.75, 2, 2.50, 6];
+
+const totalSales = sales.reduce((total, amound) => total + amount);
+
+```
+Te above returns const totalSales = 24.5
+
+FlatMap
+-------
+Each item and flatten to one level
+
+N.b. uses map then flat to reurn result.
 
 Objects
 =======
