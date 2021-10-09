@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Fetch</title>
+</head>
+<body>
+
+  <h1>To do list (api)</h1>
+  <p>Fetch the contents of json placeholder api - to do list using Javascript Fetch.</p>
+  
+  <p>Total items:<span class ="total"></span></p>
+  <p>offser:<span id ="offset"></span></p>
+  <p>page number:<span id ="pageNo"></span></p>
+
+  <button id="next">next</button>
+    <div id="placeholder"></div>
+
+    <p>Total items:<span class ="total"></span></p>
+    
+    
+    <script>
+      // api documentation https://jsonplaceholder.typicode.com/
+
+      // all todos https://jsonplaceholder.typicode.com/todos
+      // to do by user https://jsonplaceholder.typicode.com/users/1/todos
+      // all users https://jsonplaceholder.typicode.com/users
+
+      // limits ?offset=10&limit=10
+
+      // https://jsonplaceholder.typicode.com/todos?_limit=10
+
+      
+      
+      var page = 1;
+var limit = 12;
+var offset = 0;
+   //  var offset = (limit * page) - limit;
+
+   // url to get 10 records at a time
+   var url = `https://jsonplaceholder.typicode.com/todos?_limit=${limit}&offset=${offset}`;
+
+   //load api when page first loads
+   window.onload = function() {
+     getPage(page);
+   }
+   
+   // function for api calls
+   function getPage(page) {
+     fetch(url)
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+          var len = data.length;
+                for(var i=0; i<len; i++){
+          var id = data[i].id;
+          var user = data[i].userId;
+          var title = data[i].title;
+          var completed = data[i].completed;
+
+          var todo = "<p><strong>id:</strong>" + id + 
+          "<br />" + 
+          "<strong>title:</strong>" + title + 
+          "<br />" + 
+          "<strong>completed:</strong>" + completed + 
+          "</p>";
+
+          document.getElementById('placeholder').innerHTML += todo;
+         
+
+             
+      }
+      // append page number to paragraph
+     var pageNo = document.getElementById('pageNo');
+           pageNo.innerHTML = page;
+     
+// append offset to div
+var offsetNo = document.getElementById('offset');
+           offsetNo.innerHTML = offset;
+
+      // append total to total div
+     var total = document.querySelectorAll('.total');
+    total.forEach(function ( div ) {
+      div.innerHTML = len;
+
+});
+
+//page ++;
+//offset = (limit * page) - limit;
+         console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+  
+}
+
+
+
+
+document.getElementById('next').addEventListener("click", function() {
+  document.getElementById('placeholder').innerHTML = '';
+ page ++;
+offset = (limit * page) - limit;
+ getPage(page);
+});
+
+
+  </script>
+</body></html>
