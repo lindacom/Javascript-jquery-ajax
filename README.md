@@ -275,11 +275,19 @@ db.version(1).stores({
      
 ```     
 
-
-Reload window on click
+Functions
 =======================
 
+Reload window on click
+--------------------------
+
 onClick="window.location.reload();
+
+On click
+--------
+document.getElementById("btnBack").onclick = function () {
+      window.history.back()
+    };
 
 Error handling
 ==============
