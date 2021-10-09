@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- tutorials: https://www.youtube.com/watch?v=wxz5vJ1BWrc, https://www.youtube.com/watch?v=3NG8zy0ywIk -->
+<html>
+
+<head>
+  <title>Search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/css/jsplay.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+
+</head>
+
+<body>
+
+  <!-- search box-->
+  <div>
+    <h3>Quick search</h3>
+
+    <div class="form-group ">
+      <input type="search" name="search_box" id="search_box" class="form-control"
+        placeholder="Search by title, author or category" role="search">
+    </div>
+
+  </div>
+
+  <ul id="namesList">
+    <li><a href="#">Adele</a></li>
+    <li><a href="#">Agnes</a></li>
+
+    <li><a href="#">Billy</a></li>
+    <li><a href="#">Bob</a></li>
+
+    <li><a href="#">Calvin</a></li>
+    <li><a href="#">Christina</a></li>
+    <li><a href="#">Cindy</a></li>
+  </ul>
+
+  <script>
+
+    const searchBox = document.getElementById('search_box');
+
+    // captures typed characters (event) in searchbox
+    searchBox.addEventListener('keyup', (e) => {
+      var filter = e.target.value.toUpperCase();
+      var ul = document.getElementById('namesList');
+      var names = document.getElementsByTagName('li');
+      for (i = 0; i < names.length; i++) {
+        a = names[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText || a.innerHTML;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          names[i].style.display = "";
+        } else {
+          names[i].style.display = "none";
+        }
+      }
+
+    })
+
+
+  </script>
+
+</body>
+
+</html>
