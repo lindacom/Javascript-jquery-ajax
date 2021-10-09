@@ -300,6 +300,13 @@ document.getElementById("btnBack").onclick = function () {
 });
 ```
 
+run a function when page loads
+--------------------------------
+```
+ window.onload = function getPage(page) {
+ }
+```
+
 Error handling
 ==============
 The try statement lets you test a block of code for errors.
