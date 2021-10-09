@@ -288,6 +288,17 @@ On click
 document.getElementById("btnBack").onclick = function () {
       window.history.back()
     };
+    
+    change innerhtml of multiple elements with same class
+    ------------------------------------------------------
+    
+```
+ var total = document.querySelectorAll('.total');
+ 
+    total.forEach(function ( div ) {
+      div.innerHTML += len;
+});
+```
 
 Error handling
 ==============
