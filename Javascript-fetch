@@ -1,7 +1,15 @@
-Using the Fetch API
-===================
 
-   <div id="placeholder"></div>
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Fetch</title>
+</head>
+<body>
+
+  <h1>To do list (api)</h1>
+  <p>Fetch the contents of json placeholder api - to do list using Javascript Fetch.</p>
+
+    <div id="placeholder"></div>
     
     <script>
 
@@ -20,18 +28,18 @@ fetch('https://jsonplaceholder.typicode.com/todos')
                 for(var i=0; i<len; i++){
           var id = data[i].id;
           var title = data[i].title;
-          var user = data[i].userId;
+          var completed = data[i].completed;
 
-          var todo = "<p>" + 
-          id + 
-          "< /br>" + 
-          title + 
-          "< /br>" + 
-          user + 
+          var todo = "<p><strong>id:</strong>" + id + 
+          "<br />" + 
+          "<strong>title:</strong>" + title + 
+          "<br />" + 
+          "<strong>completed:</strong>" + completed + 
           "</p>";
 
-         document.getElementById('placeholder').append(todo);
-      
+          document.getElementById('placeholder').innerHTML += todo;
+
+             
       }
          console.log(data);
       });
@@ -42,3 +50,4 @@ fetch('https://jsonplaceholder.typicode.com/todos')
   });
 
   </script>
+</body></html>
