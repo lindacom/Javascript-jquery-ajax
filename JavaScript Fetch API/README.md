@@ -1,6 +1,6 @@
 Limit and offset pagination
 ============================
-
+```
 <button id="next">next</button>
 
 <script>
@@ -16,3 +16,4 @@ offset = (limit * page) - limit;
 });
   
   </script>
+```
