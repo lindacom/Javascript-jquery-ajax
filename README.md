@@ -299,13 +299,27 @@ document.getElementById("btnBack").onclick = function () {
       div.innerHTML += len;
 });
 ```
+on load
+------------
+run a function when page loads:
 
-run a function when page loads
---------------------------------
 ```
  window.onload = function getPage(page) {
  }
 ```
+
+run a function when an image has finished loading:
+
+<img id="myImage" src = ""></img>
+
+const myImage1 = document.getElementById("myImage");
+myImage1.addEventListener('load', function () {
+alert("image loaded");
+});
+
+
+
+
 
 url parameters
 =====================
