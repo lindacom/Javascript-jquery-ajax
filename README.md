@@ -349,6 +349,22 @@ Array.from(params.keys()).reduce(acc, key) => ({
 ...acc, [key]: params.get(key) }), ());
 ```
 
+on submit
+----------
+
+get url parameters on form submission and enter in text field
+
+```
+ document.getElementById("btnSubmit").onclick = function myFunction() {
+   var myText = document.getElementsByClassName("bottom-right");
+
+   const params = URLSearchParams(window.location.search)
+var hello =  params.get('fname');
+
+   myText.innerHTML = `Howdy ${hello}`;
+    }
+```
+
 Error handling
 ==============
 The try statement lets you test a block of code for errors.
