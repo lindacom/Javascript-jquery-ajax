@@ -338,7 +338,7 @@ get parameter using window.location.search
 2. get parameters needed by their name
 
 ```
-const params = URLSearchParams(window.location.search)
+const params = new URLSearchParams(window.location.search)
 params.get('q');
 ```
 
