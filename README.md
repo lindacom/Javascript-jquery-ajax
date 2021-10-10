@@ -310,14 +310,23 @@ run a function when page loads:
 
 run a function when an image has finished loading:
 
+```
 <img id="myImage" src = ""></img>
 
 const myImage1 = document.getElementById("myImage");
 myImage1.addEventListener('load', function () {
 alert("image loaded");
 });
+```
 
+on focus
+------------
+clear input field value on focus:
 
+```
+var hobby = document.getElementById("hobby");
+  hobby.onfocus = function(){hobby.value = '';};
+```
 
 
 
