@@ -307,6 +307,25 @@ run a function when page loads
  }
 ```
 
+url parameters
+=====================
+get parameter using window.location.search
+
+1, create a url parameters object
+2. get parameters needed by their name
+
+```
+const params = URLSearchParams(window.location.search)
+params.get('q');
+```
+
+N.b params.keys returns an iterator that allows you to loop over and extract the values
+
+```
+Array.from(params.keys()).reduce(acc, key) => ({
+...acc, [key]: params.get(key) }), ());
+```
+
 Error handling
 ==============
 The try statement lets you test a block of code for errors.
