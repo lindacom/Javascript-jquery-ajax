@@ -96,6 +96,35 @@ Each item and flatten to one level
 
 N.b. uses map then flat to reurn result.
 
+concatinate two arrays
+------------------------
+
+```
+
+var people = [
+{
+name: 'shane'
+},
+{
+name: 'sally'
+}
+];
+
+var people2 = [
+{
+name: 'simon'
+},
+{
+name: 'ben'
+}
+]
+;
+
+people.concat(people2).forEach(function (person) {
+console.log(person.name);
+})
+```
+
 Objects
 =======
 
