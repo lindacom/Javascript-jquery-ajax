@@ -136,6 +136,44 @@ const person = {
 
 You access an object method with the following syntax: objectName.methodName()
 
+Accessing nested array of objects
+----------------------------------
+
+```
+// create an object containing an array of objects
+const users = {
+  user:  [
+     {name:"mary", age:30, email: "mary@mary.com", town:"London", blogs: [{title: "blog one", likes:0}, {title: "blog two", likes:0}]},
+      {name:"helen", age:30, email: "mary@mary.com", town:"London"},
+      {name:"peter", age:50, email: "mary@mary.com", town:"London"},
+      {name:"paul", age:33, email: "mary@mary.com", town:"London"},
+      {name:"susan", age:21, email: "mary@mary.com", town:"London"},
+      {name:"charles", age:70, email: "mary@mary.com", town:"London"},
+      {name:"adrian", age:18, email: "mary@mary.com", town:"London"},
+      {name:"betty", age:12, email: "mary@mary.com", town:"London"},
+      {name:"carl", age:30, email: "mary@mary.com", town:"London"},
+      {name:"harry", age:33, email: "mary@mary.com", town:"London"},
+      {name:"claire", age:50, email: "mary@mary.com", town:"London", blogs: [{title: "blog last", likes:0}, {title: "blog two", likes:0}]},
+     
+     ],
+ }
+ 
+ // access object properties
+ for (var i = 0; i < users.user.length; i++) {
+ var {name, age, email, town, blogs } = users.user[i];
+  blogs = blogs ?? [];
+
+    var article = '';
+
+    for(var j=0; j < blogs.length; j++) {
+// article += blogs[j].title;
+article = article.concat(blogs[j].title);
+    }
+    
+    document.getElementById("usersList").innerHTML += tr_str;
+    }
+ ```
+
 classes
 ---------
 
