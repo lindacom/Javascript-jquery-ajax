@@ -22,6 +22,12 @@ N.b. use to $$ symbols to display currency for a variable.
 const - a variable which cannot be changed
 let - changes pulic variable without affecting original variable value.
 
+destructuring code
+---------------------
+Instead of assigning variables individually you can assign them as follows:
+
+   var {name, age, email, town, blogs } = users.user[i];
+
 Arrays
 ======
 Arrays are lists. JavaScript array methods are includes, some, every etc.
