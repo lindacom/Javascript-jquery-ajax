@@ -167,6 +167,7 @@ const users = {
 
     for(var j=0; j < blogs.length; j++) {
 // article += blogs[j].title;
+// using concat as there are more than one title.
 article = article.concat(blogs[j].title);
     }
     
