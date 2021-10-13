@@ -1,3 +1,11 @@
+Local storage
+===============
+Add key and multiple values to local storage
+
+```
+localStorage.setItem(name, [price, quantity]);
+```
+
 indexedDB
 ============
 
