@@ -125,6 +125,17 @@ console.log(person.name);
 })
 ```
 
+Get id of clicked button
+-----------------------
+```
+var buttons = document.getElementsByTagName("button");
+for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function(e) {
+        alert(this.id);
+    });
+}
+```
+
 Objects
 =======
 
