@@ -1,3 +1,14 @@
+Get and set data attributes
+============================
+```
+var tr = '<button id="' + name + '" data-price="' + price + '" data-quantity="1" class="button shop-item-button" type="button" style="position:absolute; bottom: 8px; right: 5px;">ADD TO CART</button>' +
+                    '</div>';
+                    
+ var name = this.id;
+    var price = this.dataset.price;
+    var quantity = this.dataset.quantity;
+```
+
 Variables and data strutures
 ============================
 Sets - collection of unique values.  Methods that can be used ith et include .size and .has 
