@@ -1,0 +1,20 @@
+<ul>
+<li style="float: right;"><a href="#" alt="counts items in localstorage"><i class="fas fa-shopping-cart" style=" background-color:red;"></i>
+<span class="badge" id="badge">0 </span></a></li></ul>
+                    
+<button class="button" id="btn-clear-cart" type="button"><a href="#">Clear cart</a></button>
+
+var btnClear = document.getElementById("btn-clear-cart");
+
+// remove items from local storage
+
+btnClear.onclick = function clearItems() {
+  localStorage.clear();
+  location.reload(); //refresh the page
+  updateBadge();
+  }
+  
+// update counter badge - put the count of items from local storage in counter
+function updateBadge() {
+document.getElementById("badge").innerHTML = localStorage.length; 
+}
