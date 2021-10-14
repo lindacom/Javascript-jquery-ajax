@@ -32,7 +32,7 @@ let objectStore = db.createObjectStore('contacts', (
        
        function displayData() {
        while(list.firstChild) {  // ul elemet
-          list.removeChild(list.firstChild);
+          list.removeChild(list.firstChild)
           }
           
           let objectStore = db.transaction('contacts').objectStore('contacts');
