@@ -1,0 +1,23 @@
+ const products = {
+  product:  [
+     {name:"mince", image:"/images/mince.jpg", price: 2.74, likes:4, category:"meat"},
+     {name:"chocolate", image:"/images/chocolate.jpg", price: 2.00, likes:4, category:"sweets"},
+     {name:"lemon", image:"/images/lemon.jpg", price: 0.30, likes:2, category:"fruit"},
+     {name:"lemonade", image:"/images/lemonade.jpg", price: 0.90, likes:2, category:"drinks"},
+    
+     ],
+ }
+ 
+ for (var i = 0; i < products.product.length; i++) {
+
+   var {name, image, price, likes, category } = products.product[i];
+   
+   // price formatter
+   const formatter = new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 2
+  })
+  
+ price = formatter.format(price); 
+ }
