@@ -6,6 +6,11 @@ Add key and multiple values to local storage
 localStorage.setItem(name, [price, quantity]);
 ```
 
+Clear all items in local storage
+```
+localStorage.clear();
+```
+
 indexedDB
 ============
 
