@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdowns</title>
+</head>
+<body onload="createYearOptions()">
+    <h1>Dropdowns</h1>
+    <h2>Get value of a dropdown</h2>
+    <p>When you change the dropdown value, the select value and text are shown in an input fields.</p>
+    <select id="language" onChange="update()">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="pt">Português</option>
+    </select>
+    <input type="text" id="value">
+    <input type="text" id="text">
+
+    <h2> Generate Select Options using a JavaScript For Loop</h2>
+    <label for="ccexpy">Year</label>
+<select id="ccexpy"></select>
+
+    <script>
+        // get dropdown value and text
+        function update() {
+            var select = document.getElementById('language');
+            var option = select.options[select.selectedIndex];
+
+            document.getElementById('value').value = option.value;
+            document.getElementById('text').value = option.text;
+        }
+
+        update();
+
+        // generate dropdown options (runs when the body is loaded). Tutorial https://www.youtube.com/watch?v=q9bFsirYuX0
+        function createYearOptions() {
+var d = new Date();
+var currentYear = d.getFullYear();
+var currentMonth = d.getMonth() + 1;
+var yroptions = "<option value='0'>select</option>";
+
+for(var i = currentYear; i < currentYear + 5; i++) {
+yroptions += "<option value='" + i + " '>" + i + "</option>";
+}
+document.getElementById('ccexpy').innerHTML = yroptions;
+}
+    </script>
+</body>
+</html>
