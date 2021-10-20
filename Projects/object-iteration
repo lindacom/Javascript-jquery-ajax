@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Objects</title>
+ 
+
+
+</head>
+  <body>
+
+ 
+   <h1>Objects</h1> 
+   <h2>Accessing array objects</h2>
+
+   <table id="usersList">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Email</th>
+    <th>town</th>
+    <th>Blogs</th>
+  </tr>
+ 
+  </table>
+    
+ 
+
+ <script>
+// create an object containing an array of objects
+const users = {
+  user:  [
+     {name:"mary", age:30, email: "mary@mary.com", town:"London", blogs: [{title: "blog one", likes:2}, {title: "blog two", likes:6}]},
+      {name:"helen", age:30, email: "helen@mary.com", town:"London"},
+      {name:"peter", age:50, email: "peter@mary.com", town:"London"},
+      {name:"paul", age:33, email: "paul@mary.com", town:"London"},
+      {name:"susan", age:21, email: "susan@mary.com", town:"London"},
+      {name:"charles", age:70, email: "charles@mary.com", town:"London"},
+      {name:"adrian", age:18, email: "adrian@mary.com", town:"London"},
+      {name:"betty", age:12, email: "betty@mary.com", town:"London"},
+      {name:"carl", age:30, email: "carl@mary.com", town:"London"},
+      {name:"harry", age:33, email: "harry@mary.com", town:"London"},
+      {name:"claire", age:50, email: "claire@mary.com", town:"London", blogs: [{title: "blog last", likes:7}, {title: "blog two", likes:8}]},
+     
+     ],
+ }
+
+// append users object to the users list div. 
+// n.b. to debug, in sources ctrl + P shows all files used
+
+// access object properties
+
+for (var i = 0; i < users.user.length; i++) {
+  /*  var name = users.user[i].name;
+    var age = users.user[i].age;
+    var email = users.user[i].email;
+    var town = users.user[i].town;
+    var blogs = users.user[i].blogs ?? [];*/
+
+   
+// example one assigning to variable instead of the above
+  // var user = users.user[i];
+   // then you can declare user.age etc.
+
+   //example two - destructuring code
+   var {name, age, email, town, blogs } = users.user[i];
+
+   blogs = blogs ?? [];
+
+    var article = '';
+
+    for(var j=0; j < blogs.length; j++) {
+// article += blogs[j].title;
+// using concat as there are more than one title.
+// article = article.concat(blogs[j].title);
+var {title, likes } = blogs[j];
+article = article.concat('title:', title, 'likes:',likes);
+    }
+
+    if(age == null) {
+        age = 'not known';
+    }
+
+    var tr_str =
+    '<tr><td>' +                     
+                    name +    
+                    '</td>' +
+                     '<td> age:' +  age +                 
+                       '</td><td>' + email +                 
+                       '</td><td>' + town +                 
+                       '</td>' +
+                    
+                       '<td>' + article +                 
+                       '</td>' +
+
+                       '</tr>'         
+                        ; 
+document.getElementById("usersList").innerHTML += tr_str;
+
+}
+
+     </script>
+    
+  
+    
+  </body>
+</html>
