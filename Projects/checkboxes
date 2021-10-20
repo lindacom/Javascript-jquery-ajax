@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checboxes</title>
+</head>
+<body>
+    <h1>Checkboxes</h1>
+
+    <h2>Checking a checkbox using JavaScript</h2>
+    <input type="checkbox" id="will-attend" />
+    <h2>Display Text when Checkbox is Checked</h2>
+    Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()">
+
+<p id="text" style="display:none">Checkbox is CHECKED!</p>
+<script>
+
+    // check checkbox using javascript
+    document.querySelector("#will-attend").checked = true;
+    
+     // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+    checkBox.onclick = function() {
+         
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+    }
+</script>
+</body>
+</html>
