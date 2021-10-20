@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arrays</title>
+</head>
+<body>
+
+    <h1>Array iteration</h1>
+    
+    <h2>For loop - array of urls using substring</h2>
+
+    <p id="url"></p>
+
+    <h2>Foreach loop</h2>
+
+     <p id="numbers"></p>
+
+     <h2>Array.map()</h2>
+    <p> The map() method creates a new array by performing a function on each array element.
+The map() method does not change the original array.
+multiplies each array value by 2: </p>
+ <p id="numbers2"></p>
+
+<h2>Array.filter()</h2>
+The filter() method creates a new array with array elements that passes a test.e.g.value larger than 18:
+<p id="over"></p>
+
+<h2>Array.indexOf()</h2>
+The indexOf() method searches an array for an element value and returns its position.
+<p id="fruits"></p>
+
+<h2>Array.includes()</h2>This allows us to check if an element is present in an array
+<p>Does the array contain mango?</p> 
+<p id="fruitsin"></p>
+
+<h2>While loop</h2>
+<p id="while"></p>
+
+
+    <script>
+
+// loop through an array of urls and extract part of the url from a specified starting position.
+
+var urls = [
+`http://example.com`,
+`http://example.com`,
+`http://example.com`,
+`http://example.com`,
+];
+
+// loop through urls
+
+output = '<ul>';
+
+for (var i = 0; i < urls.length; i++) {
+
+output += '<li>' +
+// urls[i].split('/') + //strips slashes from url and separates by comma
+urls[i].substr(7) + // returns part of the url from starting position 7 (removes htp://)
+'</li>'
+
+}
+
+output += '</ul>'
+
+document.getElementById('url').innerHTML = output;
+</script>
+
+<script>
+    const numbers = [45, 4, 9, 16, 25];
+let txt = "";
+numbers.forEach(myFunction);
+
+function myFunction(value) {
+  txt += value + "<br>";
+  document.getElementById('numbers').innerHTML = txt;
+}
+</script>
+
+<script>
+const numbers1 = [45, 4, 9, 16, 25];
+const numbers2 = numbers1.map(myFunction);
+
+document.getElementById("numbers2").innerHTML = numbers2;
+
+function myFunction(value, index, array) {
+  return value * 2;
+}
+</script>
+
+<script>
+const numbers = [45, 4, 9, 16, 25];
+const over18 = numbers.filter(myFunction);
+
+document.getElementById("over").innerHTML = over18;
+
+function myFunction(value, index, array) {
+  return value > 18;
+}
+</script>
+
+<script>
+const fruits = ["Apple", "Orange", "Apple", "Mango"];
+let position = fruits.indexOf("Apple") + 1;
+
+document.getElementById("fruits").innerHTML = "Apple is found in position " + position;
+</script>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("fruitsin").innerHTML = fruits.includes("Mango");
+</script>
+
+<script>
+    let arr = [5, 10, 15, 20, 25];
+
+let i=0;
+while (i < arr.length) {
+document.getElementById("while").append(arr[1]);
+i++;
+};
+</script>
+
+</body></html>
