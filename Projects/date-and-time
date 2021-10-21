@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript time</title>
+<link rel="stylesheet" type="text/css" href="css/jsplay.css">
+</head>
+<body>
+    <h1>Date and time</h1>
+    <div id="clock">
+        <div class="label">Now</div>
+        <div id="current-date"></div>
+        <div id="current-time"></div>
+    </div>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+            var currentTime = document.getElementById("current-time"),
+                currentDate = document.getElementById("current-date");          
+
+            // set a delay of 2 seconds before running function
+           // setTimeout(updateTime, 2000);
+           // update every second
+         //  setInterval(updateTime, 1000);
+
+          // N.b. if you wanted to be able to stop the time put the interval in a variable and then use clearInterval(variable)
+
+           setInterval(function updateTime() {
+                  // get date (object)
+            var d = new Date();
+
+            // get readable time toDateString
+
+               // d.toTimeString();
+
+            // get pieces of time using a date method
+            // .getHours, getMinutes, getDate, getDay
+
+var hours = d.getHours(),
+     minutes = d.getMinutes(),
+     month = formatMonth(d.getMonth()),
+     date = d.getDate(),
+     ampm = 'AM';
+
+// change 24 hour clock to standard time
+if(hours > 12) {
+    hours -= 12;
+    ampm = "PM";
+} else if (hours === 0) {
+    hours = 12;
+}
+
+// put 0 in front of minutes that are less than 10
+if(minutes < 10) {
+    minutes = "0" + minutes;
+}
+
+// display hours and minutes flashing every odd second using modulus operator %2 divided by 2 remainder 0 is even 1 is odd
+var sep = ":";
+if(d.getSeconds() % 2 === 1) sep = " ";
+currentTime.innerHTML = hours + sep + minutes + ' ' + ampm;
+currentDate.textContent = month + " " + date;
+
+// display hours minutes and seconds
+          //  c.innerHTML = hours + ":" + d.getMinutes() + ":" + d.getSeconds();
+}, 1000);
+
+// transform month into a number
+
+function formatMonth(m) {
+    m = parseInt(m, 10); // this function parses a string and returns an integer
+
+    if (m < 0) {
+        m = 0;
+    } else if (m > 11) {
+        m = 11;
+    }
+
+var monthNames = [
+    "January", "February", "March", "April", "May", "June", "July", "August", "September", 
+    "October", "November", "December"];
+
+return monthNames[m];
+        }
+
+
+        });
+    
+</script>
+</body></html>
