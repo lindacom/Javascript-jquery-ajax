@@ -1,0 +1,3 @@
+document.querySelector("#cart").addEventListener("mouseover", (e) => {
+ alert("hovered");
+});
