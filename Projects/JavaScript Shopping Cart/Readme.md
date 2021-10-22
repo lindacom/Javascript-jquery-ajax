@@ -1,3 +1,20 @@
+Change colour of icon on click
+================================
+```
+ <span class="heart" style="position:absolute; top: 8px; right: 5px;"><a href="javascript:void(0);" style="cursor:default";><i class="far fa-heart fa-2x"></i></a></span>
+```
+```
+// listen for when the heart icon is clickd
+var favourite = document.getElementsByClassName("heart");
+for (var j = 0; j < favourite.length; j++) { 
+  favourite[j].onclick = function() {
+    var heart = this.children[0];
+    console.log(heart);
+    heart.style = "color:green";
+    }
+}
+```
+
 Reduce and increase buttons
 =============================
 ```
