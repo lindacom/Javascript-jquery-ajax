@@ -1,3 +1,6 @@
+Products page functionality
+===========================
+
 Change colour of icon on click
 ================================
 ```
@@ -15,7 +18,7 @@ for (var j = 0; j < favourite.length; j++) {
 }
 ```
 
-Reduce and increase buttons
+Reduce and increase quantity buttons
 =============================
 ```
   <span class="minus"><a href="javascript:void(0);" style="cursor:default;"><i class="fa fa-minus"></i></a></span>
@@ -78,5 +81,28 @@ for (var i = 0; i < btnMinus.length; i++) {
     
    
   }
+}
+```
+
+Add to cart
+============
+```
+// ADD TO CART - listen for when purchase button clicked and get item info
+var btnPurchase = document.querySelectorAll(".shop-item-button");
+for (var i = 0; i < btnPurchase.length; i++) {
+  btnPurchase[i].addEventListener("click", function (e) {
+    this.innerHTML = "in cart"; //change text on button
+    this.disabled = true;
+    this.style.cursor = "not-allowed";
+
+    var name = this.id;
+    var price = this.dataset.price;
+    var quantity = this.dataset.quantity;
+    var summed = price * quantity;
+  
+    createItem (name, price, quantity, summed); // calls createItem function passing info as parameters. 
+
+
+});
 }
 ```
