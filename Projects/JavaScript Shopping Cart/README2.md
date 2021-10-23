@@ -23,3 +23,17 @@ closeCart.addEventListener("click", (e) => {
   }
 });
 ```
+
+Clear cart
+===========
+```
+  <button class="button" id="btn-clear-cart" type="button" style="float: right;">Clear cart</button><br />
+```
+```
+// clear cart - clears all items from local storage
+btnClear.onclick = function clearItems() {
+  localStorage.clear();
+  location.reload(); //refresh the page
+  updateBadge();
+}
+```
