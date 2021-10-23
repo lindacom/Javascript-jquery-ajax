@@ -18,6 +18,27 @@ for (var j = 0; j < favourite.length; j++) {
 }
 ```
 
+Toggle colour of icon on click
+---------------------------------
+```
+// FAVOURITES - listen for when the heart icon is clickd and change colour
+var favourite = document.getElementsByClassName("heart");
+
+for (var j = 0; j < favourite.length; j++) { 
+  favourite[j].onclick = function() {
+    var heart = this.children[0]; // acces the property that can change colour
+   // console.log(heart);
+  //  heart.style = "color:green";
+
+  if(heart.style.color === 'black') {
+    heart.style.color = 'green';
+  } else {
+    heart.style.color = 'black'
+  }
+    }
+}
+```
+
 Reduce and increase quantity buttons
 =============================
 ```
