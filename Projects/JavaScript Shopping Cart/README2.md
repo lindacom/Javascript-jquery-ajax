@@ -37,3 +37,27 @@ btnClear.onclick = function clearItems() {
   updateBadge();
 }
 ```
+
+Add array of items to local storage
+====================================
+```
+let allItems = [];
+
+  var name = name;
+  var price = price;
+  var quantity = quantity;
+  var summed = price * quantity;
+
+let storageItem = {
+    name: name,
+    price: price,
+    quantity: quantity,
+    summed: summed
+  };
+  
+  // add array of objects to local storage
+  
+  allItems.push(storageItem); // and object to allitems array
+  localStorage.setItem("allItems", JSON.stringify(allItems)); 
+  
+```
