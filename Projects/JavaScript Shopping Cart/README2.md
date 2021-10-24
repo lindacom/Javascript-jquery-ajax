@@ -61,3 +61,14 @@ let storageItem = {
   localStorage.setItem("allItems", JSON.stringify(allItems)); 
   
 ```
+
+add local storage items to session storage 
+============================================
+
+add local storage items to session storage when pmt button clicked
+```
+document.getElementById("btn-pmt").addEventListener("click", function (e) {
+  localStorage.getItem("allItems"); 
+  sessionStorage.setItem("allItems", JSON.stringify(allItems));
+});
+```
