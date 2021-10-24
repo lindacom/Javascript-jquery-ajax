@@ -147,6 +147,24 @@ for (var i = 0; i < buttons.length; i++) {
 }
 ```
 
+Array to string and back to array
+==================================
+```
+// our array
+var movies = ["Reservoir Dogs", "Pulp Fiction", "Jackie Brown", 
+"Kill Bill", "Death Proof", "Inglourious Basterds"];
+ 
+// storing our array as a string
+localStorage.setItem("quentinTarantino", JSON.stringify(movies));
+ 
+// retrieving our data and converting it back into an array
+var retrievedData = localStorage.getItem("quentinTarantino");
+var movies2 = JSON.parse(retrievedData);
+ 
+//making sure it still is an array
+alert(movies2.length);
+```
+
 Objects
 =======
 
