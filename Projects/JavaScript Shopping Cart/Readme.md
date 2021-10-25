@@ -1,6 +1,34 @@
 Products page functionality
 ===========================
 
+Search filter
+=============
+```
+// captures typed characters (event) in searchbox
+
+const searchBox = document.getElementById('search_box');
+
+// when user types in searchbox get vlue and change to uppercase
+searchBox.addEventListener('keyup', (e) => {
+  var filter = e.target.value.toUpperCase();
+
+  var names = document.getElementsByClassName('shop-item');
+  // loop over items and get the title
+  for (var i = 0; i < names.length; i++) {
+    span = names[i].getElementsByClassName("shop-item-title")[0];
+    txtValue = span.textContent || span.innerText || span.innerHTML;
+    
+    //checks if search is contained in the list value
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      names[i].style.display = "";
+    } else {
+      names[i].style.display = "none";
+    }
+  }
+
+})
+```
+
 Change colour of icon on click
 ================================
 ```
