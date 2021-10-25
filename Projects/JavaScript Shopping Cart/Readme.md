@@ -105,6 +105,35 @@ for (var j = 0; j < favourite.length; j++) {
 }
 ```
 
+Star favourites rating
+======================
+```
+for (var i = 0; i < products.product.length; i++) {
+  // Create five stars with unique id for each product - product name+stars
+ var stars =  '<li id="'+ name + 'stars"><span><i class="fa fa-star fa-w-18  checked"></i></span><span><i class="fa fa-star fa-w-18  checked" ></i></span><span><i class="fa fa-star fa-w-18  checked" ></i></span><span><i class="fa fa-star fa-w-18  checked" ></i></span><span><i class="fa fa-star fa-w-18  checked" ></i></span></li>';
+```
+```
+// STARS - loop through products and stars
+
+ var liked = '';
+for (var i = 0; i < products.product.length; i++) {
+  // get the number of likes for each item
+  liked = products.product[i].likes; 
+
+  // get product name
+  var named = products.product[i].name;
+  
+  // get a unique identifier for each product - product name + stars
+ var mystar = document.getElementById(`${named}stars`);
+ 
+   // loop over the five star icons 
+  for (var j = 0; j <= liked -1; j++) {  
+ // colour number of likes
+mystar.children[j].style = "color:red";
+  }
+}
+```
+
 Reduce and increase quantity buttons
 =============================
 ```
