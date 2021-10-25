@@ -1,5 +1,12 @@
 Products page functionality
 ===========================
+get the value from a hash parameter
+=====================================
+```
+var type = window.location.hash.split('#');
+var newy = type[1];
+console.log(newy);
+```
 
 Search filter
 =============
