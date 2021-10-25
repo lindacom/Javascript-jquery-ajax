@@ -7,14 +7,24 @@ var type = window.location.hash.split('#');
 var newy = type[1];
 console.log(newy);
 ```
-Button click alert
-===================
+Button click 
+============
+
+alert
+------
 ```
 <button class="hollow-button" id="shopFavourites" data-url="favourites.html">shop from favourites</button>
 ```
 ```
 document.getElementById("shopFavourites").onclick = () => {
   alert("hello");
+}
+```
+change url
+-----------
+```
+document.getElementById("shopFavourites").onclick = () => {
+  window.location = "payment.html";
 }
 ```
 
