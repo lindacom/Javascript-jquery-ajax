@@ -28,6 +28,17 @@ document.getElementById("shopFavourites").onclick = () => {
 }
 ```
 
+Show/hide alert message
+-------------------------
+```
+  if(heart.style.color === 'black') {
+    heart.style.color = 'green';
+   // alert
+   var alert = document.getElementById("alert");
+   setTimeout(function() {alert.style.display = "block";}, 600);
+   setTimeout(function() {alert.style.display = "none";}, 3000);
+ ```
+
 Search filter
 =============
 ```
