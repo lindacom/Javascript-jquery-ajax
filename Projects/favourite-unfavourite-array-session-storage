@@ -1,0 +1,50 @@
+FAVOURITES
+===============
+
+<span class="heart" style="position:absolute; top: 8px; right: 5px;"><a href="javascript:void(0);" style="cursor:default;color:black;";>
+<i class="far fa-heart fa-2x"></i></a></span>
+  
+
+//  - listen for when the heart icon is clickd and change colour
+var favourite = document.getElementsByClassName("heart");
+let favourites = [];
+
+// loop through heart icons
+for (var j = 0; j < favourite.length; j++) { 
+  favourite[j].onclick = function() {
+    var heart = this.children[0]; // access the tag/property that can change the colour style (i.e. a href)
+    var heartTitle = heart.parentElement.nextSibling.innerText; // get the title text
+   
+//toggle the colour (favourite and unfavourite)
+  if(heart.style.color === 'black') {
+    heart.style.color = 'green';
+    alert("added to favourites");
+     // add array of favourites to session storage
+    favourites.push(heartTitle); // and title to allitems array
+    sessionStorage.setItem("favouriteStore", JSON.stringify(favourites));
+  } else {
+    heart.style.color = 'black';
+     
+    var splicedElement; // set variable
+
+for( var i = 0; i < favourites.length-1; i++) { //loop through favourites array
+   if ( favourites[i] === heartTitle) { // check if unfavourited title is in the favourites array
+     splicedElement = favourites.splice(i, 1); // remove from array and store in a variable
+     alert(`removed ${splicedElement} from favourites`);
+    
+    
+   var three = JSON.parse(sessionStorage.getItem("favouriteStore")); // get favourites from session storage
+   for( var j = 0; j < three.length-1; j++) { //loop through favourites array
+    if ( three[j] === heartTitle) { // check if unfavourited title is in the favourites array
+       var chopped = three.splice(j, 1); // remove unfavourited title from array 
+       console.log(three); // returns the new array
+      // console.log(chopped); // returns the item that was removed
+      sessionStorage.setItem("favouriteStore", JSON.stringify(three)); // update the favourites in session storage
+    }
+  }
+   }
+}
+  }
+ 
+  }
+} // END
