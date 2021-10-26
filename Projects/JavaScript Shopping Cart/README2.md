@@ -62,6 +62,24 @@ let storageItem = {
   
 ```
 
+Retrieve array of objects from local storage
+=============================================
+```
+/ show object array of items from local storage
+var arr = localStorage.getItem("allItems"); // get data as string
+var array = JSON.parse(arr); // convert string to object
+for (var i=0;i< array.length;i++) {
+    var productItem = array[i].name;
+   var productPrice= array[i].price;
+  var productQuantity= array[i].quantity;
+ //  var productSummed= array[i].summed;
+
+   var summary = productItem + productPrice + productQuantity;
+          
+document.getElementById("productsarray").innerHTML += summary;
+}
+```
+
 add local storage items to session storage 
 ============================================
 
