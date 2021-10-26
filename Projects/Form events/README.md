@@ -54,3 +54,15 @@ gives users list of options to add in text box or type their own option
                 <option value="Swansea"></option>
             </datalist>
  ```
+ 
+character count 
+=================
+```
+var charcount = document.getElementById("charcount");
+var counter = document.getElementById("count");
+
+charcount.addEventListener("keyup", e => {
+    let count = charcount.value.length;
+    counter.value = count;
+});
+```
