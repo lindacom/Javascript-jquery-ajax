@@ -33,3 +33,11 @@ transition: all .3s;
                          <span style="right:6px;position: absolute;color: red;"> <i class="fas fa-search"></i></span>
                     </div> 
  ```
+ 
+ Show password on check
+ =======================
+ ```
+ document.getElementById("showpass").addEventListener("change", evt => {
+ let passfield = document.getElementById("pass");
+ passfield.type = evt.srcElement.checked ? "text" : "password";
+ });
