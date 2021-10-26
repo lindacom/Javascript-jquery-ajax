@@ -58,6 +58,13 @@ gives users list of options to add in text box or type their own option
 character count 
 =================
 ```
+  <div class="row">
+            <label for="txtfield">Delivery instructions </label>
+            <textarea name="txtfield" id="charcount" cols="50" rows="10" maxlength="100"></textarea>
+            Count: <output name="count" id="count" for="charcount">0</output>
+            </div>
+```
+```
 var charcount = document.getElementById("charcount");
 var counter = document.getElementById("count");
 
