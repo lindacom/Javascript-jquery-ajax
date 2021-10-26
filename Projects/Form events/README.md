@@ -41,3 +41,16 @@ transition: all .3s;
  let passfield = document.getElementById("pass");
  passfield.type = evt.srcElement.checked ? "text" : "password";
  });
+ ```
+ Datalist
+============
+gives users list of options to add in text box or type their own option
+
+```
+    <label for="field4">Town: <input type="text" id="field4" list="towns"></label>
+            <datalist id="towns">
+                <option value="London"></option>
+                <option value="Edinburgh"></option>
+                <option value="Swansea"></option>
+            </datalist>
+ ```
