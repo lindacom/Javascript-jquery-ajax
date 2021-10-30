@@ -33,3 +33,7 @@ Delete item:
 ```
 sessionStorage.removeItem("booking");
 ```
+Clear the whole cart:
+```
+localStorage.clear();
+```
