@@ -73,3 +73,30 @@ charcount.addEventListener("keyup", e => {
     counter.value = count;
 });
 ```
+
+Enable button only when certain number of required form fields are complete
+=======================================================================
+```
+var frmValues = [];
+
+if(form){
+
+  form.addEventListener("change", e => {
+
+  form.querySelectorAll("[required]").forEach(function(i) {
+           if (i.value !== '') {
+            if(frmValues.indexOf(i.value) === -1){
+         frmValues.push(i.value);
+            }
+            if(frmValues.length == 4) {
+              allAreFilled = true;
+            confirmOrder.disabled = false; 
+               }
+        }
+      });
+
+    });
+   
+    console.log(frmValues);
+}
+```
