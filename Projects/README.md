@@ -19,3 +19,17 @@ if (localStorage.getItem("username") === null) {
   //...
 }
 ```
+Get item:
+
+```
+sessionStorage.getItem("booking");
+```
+
+Set item:
+```
+sessionStorage.setItem("booking");
+```
+Delete item:
+```
+sessionStorage.removeItem("booking");
+```
