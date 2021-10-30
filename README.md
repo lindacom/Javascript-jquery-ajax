@@ -165,6 +165,18 @@ var movies2 = JSON.parse(retrievedData);
 alert(movies2.length);
 ```
 
+Push only unique items to array
+===================================
+```
+var frmValue = [];
+
+for (var i = 0; i < field.length; i++) {
+ if(frmValues.indexOf(i.value) === -1){
+         frmValues.push(i.value);
+            }
+            }
+ ```
+
 Objects
 =======
 
