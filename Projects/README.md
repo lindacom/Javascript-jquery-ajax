@@ -9,3 +9,13 @@ Below are the different ways to remove array elements in JavaScript.
 <li>By using Lodash library. (This requires loadash library to be included in your script: https://lodash.com)</li>
   <li>Using delete operator.</li>
   </ol>
+  
+  Local storage
+  =============
+check if key exists in local storage:
+
+```
+if (localStorage.getItem("username") === null) {
+  //...
+}
+```
