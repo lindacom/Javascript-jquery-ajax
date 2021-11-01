@@ -195,6 +195,39 @@ change 24 hour clock to standard time
             hours = 12;
         }
 ```
+put 0 in front of minutes that are less than 10
+-----------------------------------------------
+```
+        if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+```
+display hours minutes and seconds
+-----------------------------------
+```
+          c.innerHTML = hours + ":" + d.getMinutes() + ":" + d.getSeconds();
+          ```
+          
+ transform month into a number
+ ------------------------------
+ ```
+    function formatMonth(m) {
+        m = parseInt(m, 10); // this function parses a string and returns an integer
+
+        if (m < 0) {
+            m = 0;
+        } else if (m > 11) {
+            m = 11;
+        }
+
+        var monthNames = [
+            "January", "February", "March", "April", "May", "June", "July", "August", "September",
+            "October", "November", "December"];
+
+        return monthNames[m];
+    }
+  ```
+        
 Debugging
 ============
 ```
