@@ -1,5 +1,26 @@
 Products page functionality
 ===========================
+create an object
+=================
+```
+const products = {
+  product: [
+    { name: "Mince", image: "/images/mince.jpg", price: 2.74, likes: 1, category: "meat" },
+    { name: "Chocolate", image: "/images/chocolate.jpg", price: 2.00, likes: 3, category: "sweets" },
+    { name: "Lemon", image: "/images/lemon.jpg", price: 0.30, likes: 5, category: "fruit" },
+    { name: "Lemonade", image: "/images/lemonade.jpg", price: 0.90, likes: 2, category: "drinks" },
+  ],
+}
+```
+set all variables at once
+--------------------------
+```
+for (var i = 0; i < products.product.length; i++) {
+
+  var { name, image, price, likes, category } = products.product[i]; 
+  }
+```
+
 get the value from a hash parameter
 =====================================
 ```
