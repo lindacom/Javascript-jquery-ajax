@@ -57,7 +57,17 @@ Clear the whole cart:
 ```
 localStorage.clear();
 ```
-button click event
+Currency formatter
+====================
+```
+// price formatter
+const formatter = new Intl.NumberFormat('en-GB', {
+  style: 'currency',
+  currency: 'GBP',
+  minimumFractionDigits: 2
+});
+```
+button click events
 ===================
 click event listener
 --------------------
@@ -86,6 +96,42 @@ if (btnBack) {
   };
 }
 ```
+Input events
+============
+When characters entered in input box count length:
+```
+ if (charcount) {
+charcount.addEventListener("keyup", e => {
+    let count = charcount.value.length;
+  counter.value = count;
+});
+  }
+```
+
+Forms
+======
+For required fields store unique vaues in an array:
+
+```
+if(form){
+
+  form.addEventListener("change", e => {
+// for each required field get value and put unique value in array
+  form.querySelectorAll("[required]").forEach(function(i) {
+           if (i.value !== '') {
+            if(frmValues.indexOf(i.id + ':' + i.value) === -1){ //if the id and value are unique add to array
+         frmValues.push(i.id + ':' + i.value);
+            }
+            }
+            }
+            }
+            }
+```
+change HTML
+```
+document.getElementById("addressarray").innerHTML = orderAddress;
+```
+
 CSS
 ===
 Change style
