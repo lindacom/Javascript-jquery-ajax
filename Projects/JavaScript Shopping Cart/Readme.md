@@ -59,9 +59,12 @@ Show/hide alert message
    setTimeout(function() {alert.style.display = "block";}, 600);
    setTimeout(function() {alert.style.display = "none";}, 3000);
  ```
+ 
+ Search and filter functionality
+ ================================
 
 Search filter
-=============
+--------------
 ```
 // captures typed characters (event) in searchbox
 
@@ -87,9 +90,18 @@ searchBox.addEventListener('keyup', (e) => {
 
 })
 ```
-
+count items in session storage
+------------------------------
+```
+function updateBadge() {
+    badgeCount = JSON.parse(sessionStorage.getItem("allItems"));
+   document.getElementById("badge").innerHTML = badgeCount.length;
+}
+```
+Events
+=========
 Change colour of icon on click
-================================
+---------------------------------
 ```
  <span class="heart" style="position:absolute; top: 8px; right: 5px;"><a href="javascript:void(0);" style="cursor:default";><i class="far fa-heart fa-2x"></i></a></span>
 ```
@@ -106,7 +118,7 @@ for (var j = 0; j < favourite.length; j++) {
 ```
 
 Toggle colour of icon on click
----------------------------------
+-------------------------------
 ```
 // FAVOURITES - listen for when the heart icon is clickd and change colour
 var favourite = document.getElementsByClassName("heart");
@@ -123,6 +135,59 @@ for (var j = 0; j < favourite.length; j++) {
     heart.style.color = 'black'
   }
     }
+}
+```
+show and hide alert in specified time
+--------------------------------------
+```
+  setTimeout(function () { alertMsg.style.display = "block"; }, 600);
+            setTimeout(function () { alertMsg.style.display = "none"; }, 3000);
+```
+
+Remove from array if it exists
+---------------------------------
+```
+    for (var i = 0; i < favourites.length; i++) { 
+                if (favourites[i] === heartTitle) { 
+favourites.splice(i, 1);
+}
+}
+```
+compare two arrays for common items
+----------------------------------
+```
+if(array1){
+    // Loop for array1
+for (var i = 0; i < array1.length; i++) {
+    // Loop for array2
+    for (var j = 0; j < array2.length; j++) {
+
+        // Compare the element of each and every element from both of the arrays
+        if (array1[i] === array2[j].name) {
+
+            // creates an array of objects
+            savedFav.push(array2[j]);
+            //  savedFav.push(array2[j].name + array2[j].price + array2[j].likes);
+               }
+    }
+}
+}
+```
+On hover (mouseover)
+---------------------
+```
+document.getElementById("cart").addEventListener("mouseover", (e) => {
+ e.target.setAttribute("alt", "hi there");
+ alert("hovered");
+});
+```
+on click of X (clear button) in search box reload page
+```
+// N.b. but error is it also fires for pressing enter 
+if(searchBox){
+searchBox.addEventListener('search', function (e) {
+  window.location.reload();  
+});
 }
 ```
 
