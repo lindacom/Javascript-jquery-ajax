@@ -162,3 +162,11 @@ disable button
 ```
 btnBook.disabled = false;
 ```
+Debugging
+============
+```
+//use this to see what items you are clicking on in the dom
+cartItems.addEventListener("click", event => {
+  console.log(event.target);
+})
+```
