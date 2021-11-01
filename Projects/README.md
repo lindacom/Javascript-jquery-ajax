@@ -162,6 +162,14 @@ disable button
 ```
 btnBook.disabled = false;
 ```
+Timeout and interval
+=======================
+```
+  // set a delay of 2 seconds before running function
+    setTimeout(updateTime, 2000);
+    // update every second
+    setInterval(updateTime, 1000);
+```
 Debugging
 ============
 ```
