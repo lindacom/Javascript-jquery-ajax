@@ -185,6 +185,16 @@ Date and time
         // get pieces of time using a date method
       d.  getHours, getMinutes, getDate, getDay
 ```
+change 24 hour clock to standard time
+----------------------------------------
+```
+        if (hours > 12) {
+            hours -= 12;
+            ampm = "PM";
+        } else if (hours === 0) {
+            hours = 12;
+        }
+```
 Debugging
 ============
 ```
