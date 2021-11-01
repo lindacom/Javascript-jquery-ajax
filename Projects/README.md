@@ -170,6 +170,7 @@ Timeout and interval
     // update every second
     setInterval(updateTime, 1000);
 ```
+N.b. if you wanted to be able to stop the time put the interval in a variable and then use clearInterval(variable)
 Debugging
 ============
 ```
