@@ -171,6 +171,20 @@ Timeout and interval
     setInterval(updateTime, 1000);
 ```
 N.b. if you wanted to be able to stop the time put the interval in a variable and then use clearInterval(variable)
+
+Date and time
+==============
+```
+ // get date (object)
+        var d = new Date();
+        
+        // get readable time toDateString
+
+         d.toTimeString();
+
+        // get pieces of time using a date method
+      d.  getHours, getMinutes, getDate, getDay
+```
 Debugging
 ============
 ```
