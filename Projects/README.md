@@ -38,7 +38,9 @@ Get item:
 sessionStorage.getItem("booking");
 ```
 Get an array from local storage
+```
 JSON.parse(sessionStorage.getItem("booking"));
+```
 Set item
 ---------
 Set item:
@@ -66,6 +68,10 @@ const formatter = new Intl.NumberFormat('en-GB', {
   currency: 'GBP',
   minimumFractionDigits: 2
 });
+```
+to use:
+```
+currencyPrice = formatter.format(price);
 ```
 button click events
 ===================
