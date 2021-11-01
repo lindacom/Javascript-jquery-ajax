@@ -10,6 +10,17 @@ Below are the different ways to remove array elements in JavaScript.
   <li>Using delete operator.</li>
   </ol>
   
+Get parent, child and sibling elements
+==========================================
+```
+ btnBook[i].onclick = function (e) {
+    // get time and cost of clicked button  row
+    var chosenTime = e.target.parentElement.parentElement.children[0].innerText;
+    var delCost = e.target.parentElement.parentElement.children[1].innerText
+    alert(`you have chosen time: ${chosenTime}. The delivery will cost ${delCost}`);
+    }
+```
+  
   Local storage
   =============
 check if key exists in local storage:
@@ -19,15 +30,24 @@ if (localStorage.getItem("username") === null) {
   //...
 }
 ```
+Get item
+----------
 Get item:
 
 ```
 sessionStorage.getItem("booking");
 ```
-
+Get an array from local storage
+JSON.parse(sessionStorage.getItem("booking"));
+Set item
+---------
 Set item:
 ```
 sessionStorage.setItem("booking");
+```
+store an array in local storage:
+```
+  sessionStorage.setItem("booking", JSON.stringify([chosenTime, delCost]));
 ```
 Delete item:
 ```
@@ -36,4 +56,57 @@ sessionStorage.removeItem("booking");
 Clear the whole cart:
 ```
 localStorage.clear();
+```
+button click event
+===================
+click event listener
+--------------------
+```
+if(buttonDelivery){
+buttonDelivery.addEventListener("click", function (e) {
+  window.location = buttonDelivery.dataset.url;
+});
+}
+```
+go to url on click
+-------------------
+
+```
+if(checkout) {
+checkout.onclick = function () {
+  window.location = checkout.dataset.url;
+};
+```
+go to previous page
+--------------------
+```
+if (btnBack) {
+  btnBack.onclick = function () {
+    window.history.back();
+  };
+}
+```
+CSS
+===
+Change style
+-------------
+```
+if(checkout) {
+checkout.style.display = "none";
+}
+```
+change class
+---------------
+```
+  buttonDelivery.className = "hollow-button";
+```
+Change text
+-------------
+```
+  buttonDelivery.innerText = "Change booking";
+```
+disable button
+--------------
+```
+btnBook.disabled = false;
 ```
