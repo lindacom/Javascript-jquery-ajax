@@ -90,3 +90,35 @@ document.getElementById("btn-pmt").addEventListener("click", function (e) {
   sessionStorage.setItem("allItems", JSON.stringify(allItems));
 });
 ```
+Display sidecart
+=================
+```
+// SIDECART cart icon in menu bar - click to display sidecart.
+
+var badge = document.getElementById('cart');
+var aside = document.getElementById('cartcontent');
+
+var badgediv = JSON.parse(sessionStorage.getItem("allItems"));
+
+aside.style.display = "none";
+
+if(badge) {
+badge.addEventListener("click", (e) => {
+
+  aside.style.display = "block";
+
+for(var i=0; i<badgediv.length; i++) {
+  var ttitle = badgediv[i].name;
+  var pprice = badgediv[i].price;
+  var qquantity = badgediv[i].quantity;
+  var ssummed = badgediv[i].summed;
+
+  var badgediv2 = '<ol><li>'+ttitle + pprice + qquantity + ssummed+ '</li></ol>';
+
+ aside.innerHTML += badgediv2 ;
+}
+
+  aside.fadeToggle( "slow");
+});
+}
+```
