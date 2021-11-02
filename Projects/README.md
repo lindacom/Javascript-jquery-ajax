@@ -73,6 +73,35 @@ to use:
 ```
 currencyPrice = formatter.format(price);
 ```
+
+Calculate price * quantity
+-----------------------------
+```
+ var price = price;
+  var quantity = quantity;
+  var priceConv = Number(price.replace(/[^0-9.-]+/g,"")); // convert price to double for calculation. regex removes all non dot / digits
+  var sum = priceConv * quantity;
+  var summed = formatter.format(sum); // convert back to currency for display
+```
+calculate grand total  
+---------------------
+```
+var grand = [];
+function updateTotal(summed) {
+  var addedTotal = Number(summed.replace(/[^0-9.-]+/g,"")); // convert to number for calculation
+   grand.push(addedTotal); // add to array
+
+ var total = grand.reduce(myFunc); 
+
+ // perform calculation
+ function myFunc(a, b) {
+  return a + b;
+ }
+ 
+ cartTotal.innerHTML = formatter.format(total); // convert back to currency for display
+ 
+}
+```
 button click events
 ===================
 click event listener
