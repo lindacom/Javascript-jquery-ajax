@@ -102,6 +102,17 @@ function updateTotal(summed) {
  
 }
 ```
+BUTTONS
+========
+create and display a  button
+----------------------------
+
+```
+  let btnConfirmOrder = document.createElement("button");
+  btnConfirmOrder.innerHTML = "Confirm order";
+  bookingArray.appendChild(btnConfirmOrder);
+  ```
+  
 button click events
 ===================
 click event listener
