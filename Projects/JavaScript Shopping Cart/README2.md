@@ -118,7 +118,27 @@ for(var i=0; i<badgediv.length; i++) {
  aside.innerHTML += badgediv2 ;
 }
 
-  aside.fadeToggle( "slow");
+ badge.addEventListener("click", (e) => { // when cart menu icon is clicked
+    toggleCart();
 });
 }
 ```
+
+Toggle sidecart
+-----------------
+```
+var badge = document.getElementById('cart');
+var aside = document.getElementById('cartcontent');
+
+function toggleCart() {
+  aside.toggleAttribute('hidden');
+
+  if(aside.hidden == true) {
+aside.style.display = "none";
+} else {
+  aside.style.display = "block"; // show sidecart
+}
+
+}
+```
+
