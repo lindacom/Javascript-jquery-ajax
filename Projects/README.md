@@ -154,6 +154,18 @@ charcount.addEventListener("keyup", e => {
   }
 ```
 
+Select dropdown
+================
+get value of select:
+
+```
+var dropFilter = document.getElementById("prodFilter");
+
+dropFilter.onchange = function(){
+  alert(dropFilter.value)
+};
+```
+
 Forms
 ======
 For required fields store unique vaues in an array:
