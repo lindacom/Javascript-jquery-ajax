@@ -17,6 +17,18 @@ Select * into JavascriptDatabase.dbo.customers from
 PHPDatabase.dbo.tbl_customer 
 ```
 
+create a new database table
+----------------------------
+```
+CREATE TABLE dbo.products
+(productID int IDENTITY(1,1) PRIMARY KEY NOT NULL,
+productName varchar(255) NULL,
+productUrl varchar(max) NULL, 
+price int NULL,
+likes int NULL,
+category varchar(255) NULL )
+```
+
 Create an api project
 =======================
 1. create a blank folder, and change directory to that. 
