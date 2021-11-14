@@ -1,6 +1,6 @@
 const  config = {
-    user:  'laravel', // sql user
-    password:  'laravel', //sql user password
+    user:  'username', // sql user
+    password:  'password', //sql user password
     server:  'localhost', // if it does not work try- localhost
     database:  'JavascriptDatabase',
     options: {
