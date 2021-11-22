@@ -46,3 +46,7 @@ Await
 Await only works inside async functions within regular JavaScript code (however it can be used on its own with JavaScript modules)
 
 await can be put in front of any async promise-based function to pause the code on that line until the promise fulfils, then return the resulting value.
+
+Tutorial
+==========
+async await https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await 
