@@ -47,6 +47,20 @@ Await only works inside async functions within regular JavaScript code (however 
 
 await can be put in front of any async promise-based function to pause the code on that line until the promise fulfils, then return the resulting value.
 
+promise.all()
+===============
+promise.all() - get all the results returned into a variable
+
+Error handling
+===============
+You can use a synchronous try catch structure with async await.
+
+The catch block is passed an error object 
+
+Async/await class methods
+==========================
+you can even add async in front of class/object methods to make them return promises and awati promises inside them.
+
 Tutorial
 ==========
 async await https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await 
