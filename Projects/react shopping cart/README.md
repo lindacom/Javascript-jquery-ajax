@@ -28,6 +28,10 @@ write application code
 ---------------------
 in the src > app.js file write the application code
 
+run the application
+--------------------
+In the terminal enter npm start.  The browser will open at http://localhost:3000/
+
 
 tutorials
 ========
