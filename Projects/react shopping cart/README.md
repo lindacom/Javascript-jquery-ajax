@@ -3,6 +3,14 @@ Setting up a React Environment
 1. Run this command to create a React application - npx create-react-app my-react-app
 2. Run this command to move to the my-react-app directory - cd my-react-app
 
+Two folders you will work with are src and public. The public folder contains images
+
+Src folder
+-----------
+1. app.css
+2. app.js
+3. index.js
+
 Add styles
 ------------
 In the src > app.css file enter the styles for the application
@@ -17,7 +25,7 @@ import ReactDOM from "react-dom";
 import App from './App.js';
 
 ```
-and render
+and render the application
 
 ```
 ReactDOM.render(<App />, document.getElementById("root"));
@@ -25,7 +33,7 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 write application code
 ---------------------
-in the src > app.js file write the application code
+in the src > app.js file write the application code. Nb. the html code for the page is contained in the return block.
 
 run the application
 --------------------
