@@ -2,7 +2,6 @@ Setting up a React Environment
 ================================
 1. Run this command to create a React application - npx create-react-app my-react-app
 2. Run this command to move to the my-react-app directory - cd my-react-app
-3. Run this command to run the React application - npm start
 
 Add styles
 ------------
