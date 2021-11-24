@@ -1,4 +1,5 @@
-React is used for creating user interfaces. requires node.js 8 or higher and npm 5.6 or higher
+React is used for creating user interfaces. requires node.js 8 or higher and npm 5.6 or higher. React creates a single page app. JavaScript loads the information and changes
+the UI. Use React router to handle routing.
 
 Setting up a React Environment
 ================================
