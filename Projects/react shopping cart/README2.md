@@ -6,15 +6,20 @@ In the terminal run npm install react-router@next react-router-dom@next
 
 Create routes
 --------------
-Create a new file (e.g. pages.js) and add the routes
+Create a new file (e.g. pages.js) and add the routes using the link component and its properties.
 
 ```
 import React from "react";
+import {Link} from "react-router-dom";
+import {Link, UseLocation} from "react-router-dom";
 
 export function Home() {
     return (
         <div>
             <h1>[Company Website]</h1>
+            <nav>
+            <Link to="about">About</Link>
+                         </nav>
         </div>
     );
 }
@@ -23,6 +28,15 @@ export function About() {
     return (
         <div>
             <h1>[About]</h1>
+        </div>
+    );
+}
+
+export function Whoops404() {
+    let location = useLocation();
+    return (
+        <div>
+            <h1>{location.pathname}does not exist</h1>
         </div>
     );
 }
@@ -63,11 +77,15 @@ Create a routes component with a route for each individual component:
 </Routes>
 </div>
 ```
-
+N.b. you can add nested links within the route.  You sould remove the self closing tag and add a closing tag. Use the outlet module to list them as a sub
+section.
 Run the application
 =====================
 In the terminal run npm start
 
+If you get the following error Module not found: Can't resolve 'history' then run npm install history
+
 Training
 ========
 reactrouter.com
+reactjs.org
