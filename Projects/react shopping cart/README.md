@@ -74,6 +74,31 @@ if(data) {
 
 return <div>No products available</div>;
 ```
+
+Toggle checkbox
+===============
+```
+import {useReducer} from "react";
+```
+
+```
+const [checked, toggle] = useReducer (
+(checked) => !checked;
+false
+);
+
+return(
+<>
+<input
+type = "checkbox"
+value = {checked}
+onChange={toggle}
+/>
+<p>{checked ? "checked" : "not checked"}</p>
+</>
+);
+
+
 Handling errors
 ===============
 ```
