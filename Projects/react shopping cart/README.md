@@ -74,7 +74,17 @@ if(data) {
 
 return <div>No products available</div>;
 ```
-
+Handling errors
+===============
+```
+const [error, setError] = useState(null);
+```
+```
+ .catch(setError);
+ ```
+ ```
+ if(error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
+ ```
 
 
 run the application
