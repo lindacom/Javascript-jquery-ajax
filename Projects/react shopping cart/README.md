@@ -124,6 +124,7 @@ Open dev tools and select components
 Testing
 ===========
  JEST test suite is installed automatically when create react app is installed.
+ create a .test.js file.
 run using npm test
 
 
