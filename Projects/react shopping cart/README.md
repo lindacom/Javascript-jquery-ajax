@@ -37,7 +37,45 @@ ReactDOM.render(<App />, document.getElementById("root"));
 
 write application code
 ---------------------
-in the src > app.js file write the application code. Nb. the html code for the page is contained in the return block.
+in the src > app.js file write the application code. 
+
+```
+import React, {useState, useEffect} from 'react';
+import './App.css';
+
+function App() {
+}
+```
+
+Nb. the html code for the page is contained in the return block.
+
+Getting data from an api using hooks
+====================================
+```
+// fetch data from an api 
+const [data, setData] = useState([]);
+useEffect(() => {
+  fetch(`https://jsonplaceholder.typicode.com/todos`)
+  .then((response) => response.json()) // convert response to json
+  .then(setData);
+}, []);
+
+if(data) {
+  return (
+    <div className="products">
+     {data.map((product, idx) => (
+       <div className="product" key={idx}>
+                 <h3>{product.title}</h3>
+                 </div>
+     ))}
+                   </div>
+   )
+}
+
+return <div>No products available</div>;
+```
+
+
 
 run the application
 --------------------
