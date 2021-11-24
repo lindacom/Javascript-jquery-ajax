@@ -121,6 +121,11 @@ Developer tools
 In the browser search chrome web store react developer tools and add the extesion to chrome.
 Open dev tools and select components
 
+Testing
+===========
+ JEST test suite is installed automatically when create react app is installed.
+run using npm test
+
 
 tutorials
 ========
