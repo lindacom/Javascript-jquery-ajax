@@ -80,6 +80,40 @@ In visual studio code go to extensions and install ES7 React/Redux/GraphQL/React
 
 Then in a components file you can type rfc and then tab to get a template for creating a function.
 
+Rendering products
+=====================
+1. create a data.js file containing a data object with an array of product objects. export the data.
+2. Create a product.js file in the components folder containing a function which returns product properties. export the function
+3. Create a main.js file in the components folder which imports product function and maps over the products using id a key
+4. In the app.js file import data, extracts products from the data object and renders it in the main section.
+
+```
+export default function Product(props) {
+    const {product} = props;
+    }
+```
+
+```
+export default function Main (props) {
+    // gets products from props
+const {products } = props;
+```
+
+```
+function App() {
+const { products } = data;
+  return (
+        <div className="App">
+<Header></Header>
+<div className="main">
+  <Main products={products}></Main>
+    <Basket></Basket>
+</div> 
+ </div>
+  )
+     }
+ ```
+
 Getting data from an api using hooks
 ====================================
 ```
