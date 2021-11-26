@@ -148,6 +148,17 @@ function App() {
      }
 ```
 
+Add to cart functionality
+=========================
+product:
+1. in app.js file pass onAdd function to the returned main component
+2. in the main.js component file pass onAdd to returned product component
+3. In the product.js component file use the onAdd function in the button click
+
+basket:
+1. in app.js pass onAdd to the basket component
+2. in the basket component use onAdd for the plus button
+
 Getting data from an api using hooks
 ====================================
 ```
