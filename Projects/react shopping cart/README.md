@@ -220,6 +220,40 @@ const onAdd = (product) => {
  </div>
   )
  ```
+ 
+ Cart calculations
+ -------------------
+ ```
+    const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+    const taxPrice = itemsPrice * 0.20;
+    const shippingPrice = itemsPrice > 20 ? 0 : 50;
+    const totalPrice = itemsPrice + taxPrice + shippingPrice;
+ ```
+ ```
+ return (
+   {cartItems.length !== 0 && (
+        <>
+        <hr></hr>
+        <div className="row">
+            <div className="col-2">Items Price:</div>
+            <div className="col-1 text-right">£{itemsPrice}</div>
+        </div>
+        <div className="row">
+            <div className="col-2">Tax Price:</div>
+            <div className="col-1 text-right">£{taxPrice}</div>
+        </div>
+        <div className="row">
+            <div className="col-2">Shipping Price:</div>
+            <div className="col-1 text-right">£{shippingPrice}</div>
+        </div>
+        <div className="row">
+            <div className="col-2"><strong>Total Price:</strong></div>
+            <div className="col-1 text-right">£{totalPrice}</div>
+        </div>
+        </>
+        
+    )}
+ ```
 
 Getting data from an api using hooks
 ====================================
