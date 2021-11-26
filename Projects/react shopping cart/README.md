@@ -159,6 +159,68 @@ basket:
 1. in app.js pass onAdd to the basket component
 2. in the basket component use onAdd for the plus button
 
+Cart functionality
+======================
+Add and remove products
+
+1. In the Basket.js component file use functions as props, create button click events
+2. In the app.js file import basket and put add and remove funtionlaity in the app function
+
+```
+export default function Basket (props) {
+    const {cartItems, onAdd, onRemove} = props;
+return (
+  <div className="col-2">
+            <button onClick={() => onAdd(item)} className="add">+</button>}
+            <button onClick={() => onRemove(item)} className="remove">-</button>}
+      
+       </div>
+       )}
+  ```
+  
+  ```
+    // when button clicked append product to array
+const onAdd = (product) => {
+  const exist = cartItems.find((x) => x.id === product.id)
+  if(exist) {
+  setCartItems(
+    cartItems.map((x) =>
+    x.id === product.id ? {...exist, qty: exist.qty +1 } : x
+    )
+);
+  } else {
+    setCartItems([...cartItems, {...product, qty:1}])
+  }
+};
+
+  
+  // when button clicked remove from cart
+  const onRemove = (product) => {
+    // search cart items where id equals product id
+    const exist = cartItems.find((x) => x.id === product.id);
+    // if qty 1 remove from cart
+    if (exist.qty === 1) {
+      setCartItems(cartItems.filter((x) => x.id !== product.id))
+    } else {
+    setCartItems(
+      cartItems.map((x) =>
+      x.id === product.id ? {...exist, qty: exist.qty -1 } : x
+      )
+   
+  );
+}
+  };
+  return (
+        <div className="App">
+<Header></Header>
+<div className="main">
+  <Main onAdd={onAdd} products={products}></Main>
+      <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} ></Basket>
+</div> 
+ </div>
+  )
+ ```
+
 Getting data from an api using hooks
 ====================================
 ```
