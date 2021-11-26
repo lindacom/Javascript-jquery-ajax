@@ -113,6 +113,40 @@ const { products } = data;
   )
      }
  ```
+ 
+ Displaying empty cart
+ =====================
+ 1. In the components folder create a Basket.js file
+ 2. in the app.js file import the basket function. Create a cartitems array using useState and render the component
+
+```
+import React from 'react';
+
+export default function Basket (props) {
+    const {cartItems} = props;
+return (
+<aside className="block col-1">
+    <h2>Cart Items</h2>
+    <div>{cartItems.length === 0 && <div>Cart is empty</div>}
+    </div>
+    </aside>
+    )
+}
+```
+```
+function App() {
+  const [cartItems, setCartItems] = useState([]);
+ return (
+        <div className="App">
+<Header></Header>
+<div className="main">
+  <Main products={products}></Main>
+      <Basket cartItems={cartItems} ></Basket>
+</div> 
+ </div>
+  )
+     }
+```
 
 Getting data from an api using hooks
 ====================================
