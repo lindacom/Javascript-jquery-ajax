@@ -49,6 +49,7 @@ function App() {
 ```
 
 Nb. the html code for the page is contained in the return block.
+
 Page layout
 -------------
 
@@ -72,6 +73,12 @@ function App() {
 1. Create a components folder and create a file for header, main and aside.  
 2. Export the functions and import them into the app.js file.
 3. Display the sections of the page in the return statement using brackets
+
+Components
+--------------
+In visual studio code go to extensions and install ES7 React/Redux/GraphQL/React-native snippets
+
+Then in a components file you can type rfc and then tab to get a template for creating a function.
 
 Getting data from an api using hooks
 ====================================
