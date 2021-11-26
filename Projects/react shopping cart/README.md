@@ -49,6 +49,29 @@ function App() {
 ```
 
 Nb. the html code for the page is contained in the return block.
+Page layout
+-------------
+
+```
+function App() {
+// The first value is our current state.
+// The second value is the fuction that is used to update our state.
+// we set the initial state to an empty array: useState([])
+
+  return (
+    <div className="App">
+<Header></Header>
+<div className="main">
+  <Main></Main>
+    <Basket></Basket>
+</div> 
+ </div>
+  )
+     }
+```
+1. Create a components folder and create a file for header, main and aside.  
+2. Export the functions and import them into the app.js file.
+3. Display the sections of the page in the return statement using brackets
 
 Getting data from an api using hooks
 ====================================
