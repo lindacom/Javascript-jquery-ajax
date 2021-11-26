@@ -305,6 +305,15 @@ onChange={toggle}
 );
 
 ```
+
+on click alert
+===============
+
+```
+       <button onClick={() => alert('implement Checkout')}>
+Checkout
+</button>
+```
 Handling errors
 ===============
 ```
