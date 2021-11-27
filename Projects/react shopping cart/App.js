@@ -1,58 +1,67 @@
 import React, {useState} from 'react';
 import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
+import Basket from './components/Basket';
+import data from './data';
 
 function App() {
+// The first value is our current state.
+// The second value is the fuction that is used to update our state.
+// we set the initial state to an empty array: useState([])
 
+// PRODUCTS DATA
+// extracts products from the data object. Pass products to main component which will render products
+const { products } = data;
+
+// CART FUNCTIONALITY
   // cart array
-const [cart, setCart] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-//const[page, setPage] = useState('products');
-
-// array of products
-  const [products] = useState([
-    {
-name: 'Chocolate',
-cost: '£0.70',
-image: './images/chocolate.jpg',
-    },
-    {
-      name: 'lemon',
-    cost: '£0.90',
-    image: './images/chocolate.jpg',
-  },
-]);
-
-// when button clicked append product to array
-const addToCart = (product) => {
-  console.log('we are in addToCart');
-  setCart([...cart, product]);
-}
-
-// when button clicked remove from cart
-const removeFromCart = (productToRemove)=> {
-setCart(cart.filter((product) => !== productToRemove)
+  // when button clicked append product to array
+const onAdd = (product) => {
+  const exist = cartItems.find((x) => x.name === product.name)
+  if(exist) {
+  setCartItems(
+    cartItems.map((x) =>
+    x.name === product.name ? {...exist, qty: exist.qty +1 } : x
+    )
 );
+  } else {
+   setCartItems([...cartItems, {...product, qty:1}])
+  }
 };
 
+  
+  // when button clicked remove from cart
+  const onRemove = (product) => {
+    // search cart items where id equals product id
+    const exist = cartItems.find((x) => x.name === product.name);
+    // if qty 1 remove from cart
+    if (exist.qty === 1) {
+      setCartItems(cartItems.filter((x) => x.name !== product.name))
+    } else {
+    setCartItems(
+      cartItems.map((x) =>
+      x.name === product.name ? {...exist, qty: exist.qty -1 } : x
+      )
+   
+  );
+}
+  };
   return (
-    <div className="App">
-<header><button>Go to Cart ({cart.length})</button>
-</header>
-     <h1>Products</h1>
-     <div className="products">
-     {products.map((product, idx) => (
-       <div className="product" key={idx}>
-                 <h3>{product.name}</h3>
-     <h4>{product.cost}</h4>
-      <img src={product.image} alt={product.name}/>
-    <button onClick={() => addToCart(product)}>ADD TO CART</button>
-    <button onClick={() => removeFromCart(product)}>Remove</button>
-    </div>
-        ))}
-       </div>
+        <div className="App">
+                   <Header className="head-text" countCartItems={cartItems.length}></Header>
+<div className="main-text">
+  <Main onAdd={onAdd} onRemove={onRemove} products={products}></Main>
+      <Basket onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} ></Basket>
+</div> 
  </div>
   )
      }
+
+    
+
 
    
 

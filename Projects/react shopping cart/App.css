@@ -54,10 +54,35 @@
 button {
   font-size: 20px;
   padding: 10px;
+  background-color: blue;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+button.add {
+  background-color: #40c0f0;
+  width: 1.5rem;
+}
+
+button.add {
+  background-color: #f04040;
+  width: 1.5rem;
+}
+
+
 
 header {
   background-color: pink;
   height: 70px;
   padding-top: 20px;
+}
+
+.main-text {
+  display: grid;
+  grid-template-columns:2fr 1fr;
+}
+
+.head-text {
+  display: grid;
+  grid-template-columns:2fr 1fr;
 }
