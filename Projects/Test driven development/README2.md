@@ -20,3 +20,7 @@ in the package.json file add the following script to check the whole project:
 "Lint": "eslint ./"
 
 then in the terminal write npm run lint
+
+Tutorial
+============
+https://www.youtube.com/watch?v=VtGcELANPgU
