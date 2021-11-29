@@ -69,4 +69,21 @@ This will run all tests in the src folder and show passing and failing tests.
 Alternatively ope the ackage.json file and add the above code to the tests key. N.b use backslash to escape the speechmark. Then to run the tests 
 in the terminal enter npm run test.
 
+Async/Await
+=================
+To use async await in Mocha you need to download regenerator runtime.
+
+1. in the terminal enter npm install --save-dev regenerator-runtime
+2. In the test folder create a new file e.g. called mocha-setup.js and import regenerator. enter:
+
+```
+import 'regenerator-runtime/runtime';
+```
+3. In the package.json file change the mocha test details so that regenerator is run first before any tests
+
+```
+npx mocha "src/**/*.test.js" --recursive --require @babel/register --file sr/mocha-setup.js
+```
+
+
 
