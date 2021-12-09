@@ -39,6 +39,19 @@ const createRequest = function(url) {
 createRequest(url);
 ```
 
+updating the DOM
+===================
+
+```
+const updateUISuccess = function(data) {
+    console.log(data);
+
+    // add a for loop
+   var modify = document.getElementById("demo");
+   modify.innerText += data;
+};
+```
+
 View requests and responses in the browser
 =============================================
 in the browser open developer tools
