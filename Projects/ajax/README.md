@@ -48,3 +48,15 @@ in dev tools go to the network tab
 headers tab - shows requests and responses sent 
 preview tab - shows the response (JSON)
 
+Proxy servers explained
+=========================
+When making a request to an api using an api key that key is visible in developer tools and can be used by hackers.
+To avoid this you could use a proxy srver
+
+A proxy server is a web server that receives a request, makes some modification to it, and then forwards it. You can set up a proxy server to store
+your api credentials and append them to requests that it receives.
+
+the request in your application would target the proxy server that would add credentias and forward request to the api.
+The proxy would also receive the response from the api and forward it to the client.
+Therefore credentials do not pass through the browser and cannot be viewed by users.
+
