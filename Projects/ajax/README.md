@@ -99,5 +99,6 @@ Therefore credentials do not pass through the browser and cannot be viewed by us
 
 Documentation
 ===============
-Ajax - https://api.jquery.com/category/ajax/
+Ajax (jquery) - https://api.jquery.com/category/ajax/
+Jquery events - https://api.jquery.com/category/events/
 
