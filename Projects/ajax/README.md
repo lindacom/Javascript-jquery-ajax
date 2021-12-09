@@ -38,3 +38,13 @@ const createRequest = function(url) {
 // call the function passing in the url
 createRequest(url);
 ```
+
+View requests and responses in the browser
+=============================================
+in the browser open developer tools
+refresh the webpage
+in dev tools go to the network tab
+
+headers tab - shows requests and responses sent 
+preview tab - shows the response (JSON)
+
