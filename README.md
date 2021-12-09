@@ -1,3 +1,7 @@
+Installing jquery
+=================
+you can get JQuery CDN from http://jquery.com/download or http://cdnjs.com
+
 Get and set data attributes
 ============================
 ```
