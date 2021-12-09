@@ -1,5 +1,5 @@
-make an ajax request to an api
-================================
+make an ajax request to an api (vanilla javascript)
+======================================================
 
 ```
 // SEND AJAX REQUEST TO THE API (read the following code from bottom up)
@@ -50,6 +50,30 @@ const updateUISuccess = function(data) {
    var modify = document.getElementById("demo");
    modify.innerText += data;
 };
+```
+
+Make a request to an api (Jquery)
+==================================
+```
+// returns an array of objects
+$.getJSON('http://localhost:8090/api/customers', function(data) {
+console.log(data);
+});
+```
+
+Loop through data (key value pairs) and add to DOM (Jquery)
+=============================================================
+```
+$.getJSON('http://localhost:8090/api/customers', function(data) {
+var output = '<ul>';
+$.each(data, function(key, val) {
+// returns the customer name property
+    output += '<li>' + val.CustomerName + '</li>';
+});
+output += '</ul>';
+// add the output to the dom
+$('#demo').html(output);
+});
 ```
 
 View requests and responses in the browser
