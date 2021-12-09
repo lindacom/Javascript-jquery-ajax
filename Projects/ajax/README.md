@@ -73,3 +73,7 @@ the request in your application would target the proxy server that would add cre
 The proxy would also receive the response from the api and forward it to the client.
 Therefore credentials do not pass through the browser and cannot be viewed by users.
 
+Documentation
+===============
+Ajax - https://api.jquery.com/category/ajax/
+
