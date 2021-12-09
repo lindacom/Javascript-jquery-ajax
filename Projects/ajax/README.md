@@ -76,6 +76,26 @@ $('#demo').html(output);
 });
 ```
 
+bind using jquery keyup event
+==================================
+when search box is clicked  the function will run and display json data
+
+$('#search').keyup(function() { 
+$.getJSON('http://localhost:8090/api/customers', function(data) {
+  //  console.log(data);
+var output = '<ul class="searchresults">';
+$.each(data, function(key, val) {
+    output += '<li>';
+    output += '<h2>' + val.CustomerName + '</h2>';
+    output += '<img src="images/avatar.jpg" alt="' + val.CustomerName + '" style="width:250px"/>';
+    output += '<p>' + val.town + '</p>';
+    output += '</li>';
+});
+output += '</ul>';
+$('#demo').html(output);
+});
+});
+
 View requests and responses in the browser
 =============================================
 in the browser open developer tools
