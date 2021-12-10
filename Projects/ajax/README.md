@@ -96,6 +96,19 @@ $('#demo').html(output);
 });
 });
 
+Use Ajax search and regex insensitive search
+==============================================
+
+```
+var searchField = $('#search').val();
+var myExp = newRegExp(searchField, "i");
+```
+```
+// if it does exist
+if ((val.name.search(myExp) != -1) {
+// code
+});
+
 View requests and responses in the browser
 =============================================
 in the browser open developer tools
