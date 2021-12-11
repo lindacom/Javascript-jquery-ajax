@@ -55,3 +55,47 @@ DELETE - http://localhost:8090/api/products/id
 
 1. delete a product
 2. not delete a product - incorrect id
+
+Functional tests
+================
+Search/filter
+--------------
+1. View all products
+2. View products by name
+3. Filter products by:
+- category
+- top rated (stars)
+- A-Z (alphabetically)
+- price: low to high
+- price: high to low
+
+Favourites
+-------------
+1. add a product to favourites
+2. View all favourites
+3. Unfacourite a product
+4. Clear all favourites
+
+Cart
+----
+1. View cart
+2. add a product to the cart
+3. increase quantity
+4. decrease quantity
+5. delete a product from the cart
+6. display badge counter
+7. update badge counter
+8. Clear the cart
+
+Order
+----
+1. Create an order
+2. View an order
+3. Add address to the order
+4. Delete an order
+
+Delivery
+--------
+1. Add a delivery time to an order
+2. Update delivery time
+3. View address, time and cart items (order confirmation)
