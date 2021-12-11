@@ -46,3 +46,15 @@ displayProducts:
 1. sends a fetch api request to the api, loops through the data and creates a new product object for each item, pushes the 
 product object to the products array.
 2. creates a table from the projects array and displays it in the index page
+
+```
+fetch('http://localhost:8090/api/products')
+  .then(response => response.json())
+ .then(data => { 
+  for(let i=0; i<data.length; i++) {
+     products = new Product(data[i].productID, data[i].productName, data[i].productUrl, data[i].price, data[i].likes, data[i].category)
+    productArray.push(products); 
+    }
+   // console.log(productArray); 
+    });
+ ```
