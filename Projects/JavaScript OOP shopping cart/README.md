@@ -41,8 +41,19 @@ export default class Cart {
 }
 ```
 
+User journeys
+================
+1. View all products
+2. Add a product to the cart
+3. View the cart
+4. Checkout
+5. Book a delivery slot
+6. Confirm order
+
 Functions
 ============
+View all products
+---------------------
 displayProducts:
 1. sends a fetch api request to the api, loops through the data and creates a new product object for each item, pushes the 
 product object to the products array.
