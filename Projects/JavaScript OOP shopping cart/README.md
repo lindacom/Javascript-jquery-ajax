@@ -70,3 +70,22 @@ fetch('http://localhost:8090/api/products')
    // console.log(productArray); 
     });
  ```
+ 
+ getProduct:
+ 1. Gets a product by name 
+
+```
+// button click event gets input value
+document.getElementById("singleProduct").addEventListener("click", function() {
+ let singleProduct = document.getElementById("prodName").value;
+  getProduct(singleProduct);
+});
+
+  // send fetch request for one product
+  export function getProduct(name) {
+    let named = name;
+    fetch(`http://localhost:8090/api/products/${named}`)
+    .then(response => response.json())
+   .then(data => console.log(data)); 
+  }
+ ```
