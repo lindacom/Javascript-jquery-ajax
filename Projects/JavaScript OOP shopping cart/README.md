@@ -1,7 +1,8 @@
 JavaScript OOP shopping cart
 =============================
-1. Create an index file which calls the main.js file as a module
-2. Create a main.js file to import all the functions
+1. Create an index file which contains a script that calls the main.js file as a module
+2. Create a main.js file to import all the functions from js files
+3. create various js files and export the functions
 
 Products javascript file
 -------------------------
