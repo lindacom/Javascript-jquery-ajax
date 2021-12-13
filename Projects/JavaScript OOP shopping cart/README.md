@@ -50,8 +50,8 @@ User journeys
 5. Book a delivery slot
 6. Confirm order
 
-Functions
-============
+Methods and actions
+====================
 View all products
 ---------------------
 displayProducts:
