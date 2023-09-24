@@ -1,0 +1,207 @@
+/* MOBILE FIRST DESIGN LAYOUTS USING FLEXBOX AND CSS GRID */
+
+/* FLEXBOX */
+
+body { 
+    background-color: var(--grey); 
+    font-family: Arial,Helvetica Neue,Helvetica,sans-serif;
+  
+  
+    display:flex; 
+    min-height: 100vh; /*vertical height*/
+    flex-direction:column;
+   } 
+  
+   /* main tag */
+
+  main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+  
+    /* main div */
+     .main {
+      display:flex;  /* FLEXBOX */
+     flex-direction:column;
+     flex:1;
+     justify-items: center;
+    } 
+  
+    .main article {
+      flex:1; /* means this element will grow more than the two asides */
+    }
+
+    #whole-cart {
+      box-sizing: border-box;
+      background-color: var(--green); 
+     width: 750px;
+     /*  height: 423px; n.b. don't set the height and then div will grow with the content */
+      margin: 80px auto;
+      padding: 10px;
+      box-shadow: 1px 2px 3px 0px var(--shadow); 
+      border-radius: 6px;
+    /*  position:relative;*/
+  
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-price {
+      /*  flex:3; */
+        }
+
+        #incrementor {
+      /*  position:absolute; 
+        bottom: 60px; 
+        left: 55px;
+         flex:2 / 3; */
+       }
+       .minus {
+        /* flex:2 / 3; */
+       }
+       .plus{
+       /*  flex:2 / 3; */
+       }
+
+  
+  /* CSS GRID */
+  
+  /* three column layout used for products display */
+  .mainContainer { 
+   display:grid;
+   grid-template-columns: repeat(3, 1fr); /* three columns taking one fraction each */
+   }
+  
+  .hero {
+    background-size:cover;
+      font-size:20px;
+     
+    /*text-align:center;*/
+  
+    display:grid;
+    grid-template-columns: 10px 2fr 10px;
+    grid-template-rows: .5fr 1fr 20px;
+    grid-gap:20px;
+  }
+  
+  .hero h1 {
+    color:#5E5E5E;
+     font-size:2rem;
+    text-transform:uppercase;
+  
+    grid-column: 2 / 3; /* controls placement of the text in the hero. displays well in all screen sizes */
+    grid-row: 2 / 2;
+  }
+  
+     /* one column container used on delivery page */
+   .delContainer { 
+     display:grid;
+   grid-template-columns: repeat(auto-fit, 600px);
+   grid-template-rows: 1fr;
+   grid-column: 2 / 3;
+   grid-row: 2 / 2;
+    }
+   
+    /* filters panel */
+
+   .radioBtns {
+     display: grid;
+     grid-template-columns: repeat(8, auto); /* arranges the categories radio buttons in a grid */
+   }
+
+   /* products */
+   .shop-items {
+    display: grid;
+    grid-gap: 1rem;
+   }
+  
+   .shop-item {
+  /*  display: grid;
+    grid-template-columns: 1fr;*/
+  
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1
+  rem
+  ;
+      grid-template-rows: 1fr;
+  
+  }        
+                    
+  /* MEDIA QUERIES - LAYOUTS*/
+ 
+  /* larger screen sizes - ipad and above */
+  @media(min-width: 768px) {
+    main {
+      display:flex;
+        flex-direction:row;   
+     }
+  
+        aside {
+          display:block;
+              background-color: var(--black);
+          flex: 0 0 10%;/* grow, shrink and settings amount.  will grow 1/5th of page and no more proportional to other elements (main and aside)
+              */  }
+             
+                .sidebar1 {
+                  order: -1; /* appears before the main item in large view */
+                }
+  
+  /*article container size */
+                .promo {
+                  display:grid;
+                  grid-template-columns: 450px 450px;
+                  grid-gap: 1rem;
+                  justify-content: center;
+                }
+  /* two rows for image and caption totals height of image */
+                figure {
+                  display: grid;
+                  grid-template-rows: 150px 100px;
+                }
+  
+
+  .shop-items {
+    display:grid;
+   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+   grid-gap:1rem;
+    }  
+  
+  .shop-item {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }        
+
+   .shop-item-details > ul  {
+  /*  list-style-type: none;*/
+   /* display:grid; /* places item details in its own grid */
+  /*  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));*/
+  }
+  /*filters panel */
+                .shop-filters { 
+                  margin:30px;
+                  background-color:var(--green); 
+  
+                  display:flex;
+                  align-items:center;
+                }
+  
+                   #favouritesList {
+                 /*   grid-template-columns: repeat(auto-fit, 250px);*/
+                    grid-template-columns: repeat(auto-fit, 750px);
+                                }
+  
+                footer {
+                  display: grid; /* large screen two column grid */
+                  grid-template-columns: 1fr 1fr;
+                  grid-template-rows: 1fr .25fr;
+                  align-items: center;
+                }
+  
+                footer .contactInfo {
+                  background-color:var(--white);
+                  padding: 20px;
+                  grid-column: 1 / -1; /*in the second row starts at grid line one and ends at the last gridline i.e. spans the full width of the row */
+                }
+  } /*END OF LARGE MEDIA QUERY*/
