@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Events</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/jsplay.css">
+  
+ 
+ 
+</head>
+
+<body onresize="resizeFunction()">
+
+  <h1>Javascript events</h1>
+  <h2>Image change - set interval</h2>
+
+  <div style="position: relative;  text-align: center;color: red;">
+    
+    <img id="mainImage" src="/images/avatar.jpg" style="width:100%; display: inline-block;height:400px;padding:5px;"> 
+
+    <div style="position: absolute; bottom: 8px; right: 16px;clear:both;">Bottom Right</div>
+     
+   </div>
+ 
+<p id="windowSize"></p>
+<hr />
+
+  <h2>Button events</h2>
+  <h3>on click</h3>
+
+
+  <button type="button" class="button" id="btnBack">Back</button>
+
+  <button type="button" name="btnDisable">disabled button</button>
+
+  <button type=" button" class="button" id="btnRedirect">Redirect</button>
+
+  <button type="button" class="button" onmouseover="mOver(this)" onmouseout="mOut(this)">Mouseover</button>
+
+  <hr />
+
+  <h2>HTML Forms</h2>
+  
+    <ol>
+      <li><strong>on change</strong> - to uppercase and <strong>on keydown</strong> background colour change</li>
+        <li>Enter text in the name field and see it change <strong>to uppercase</strong>. </li>
+          <li>Click reset button to reset the form.</li>
+            <li>Clear the hobby input field when it gets <strong>focus</strong></li>
+  </ol>
+  <form action="" id="personalDetails">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" onchange="upperCase()"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="myhobby">Hobby:</label><br> 
+    <input type="text" id="hobby" name="hobby" value="singing"><br><br>
+    <input type="button" class="button" id="btnReset" value="Reset">
+    <button type=" button" class="button" id="btnSubmit">Submit</button>
+  </form>
+
+
+  <h3>Alert</h3>
+  <p>Click the following button and see alert box</p>
+  <form>
+    <input type="button" id="btnSayHello" value="Say Hello" />
+  </form>
+
+  <h2>Create element</h2>
+  Uses for loop to create specified number of elements, adds text to the innertext of the element and appends to the container.
+  <div id="buttonsContainer"></div>
+
+  <script>
+
+    // listen for when the page is resized
+    function resizeFunction() {
+  var width = window.outerWidth;
+  var height = window.outerHeight;
+  var txt = "Window size: width=" + width + ", height=" + height;
+  document.getElementById("windowSize").innerHTML = txt;
+}
+
+    // detect when image has finished loading and run function to change image every 3 seconds
+/*var loadImage = document.getElementById("mainImage");
+loadImage.addEventListener('load', function () {
+setInterval(startTimer, 3000);
+});*/
+
+var j = 0;
+var images = [];
+
+          images[0] = "/images/avatar2.png";
+          images[1] = "/images/avatar.jpg";
+          images[2] = "/images/avatar2.png";     
+         
+         // change image from the array every three seconds. Tutorial https://www.youtube.com/watch?v=4YQ4svkETS0 
+function startTimer() {  
+  var changeImage = document.getElementById("mainImage");      
+  changeImage.src = images[j];
+
+  if(j < images.length - 1) {
+ j++;
+}  else {
+  j = 0;
+}
+setInterval("startTimer()", 3000);
+}
+// call the funcion when the page loads
+window.onload = setTimeout("startTimer()", 3000);         
+
+    // back button which uses browser history 
+    var btnBack = document.getElementById("btnBack");
+    btnBack.onclick = function () {
+      window.history.back();
+    };
+
+    // disable button
+    document.getElementsByName("btnDisable")[0].setAttribute("disabled", true)
+
+    // redirect
+    document.getElementById("btnRedirect").onclick = function () {
+      location.href = "inputfields.html";
+    };
+
+    // mouseover
+    function mOver(obj) {
+      obj.innerHTML = "Thank You"
+    }
+
+    function mOut(obj) {
+      obj.innerHTML = "Mouse Over Me"
+    }
+
+    // reset form
+    document.getElementById("btnReset").onclick = function myFunction() {
+      document.getElementById("personalDetails").reset();
+    };
+
+    // submit form, get url parameters and add to an element
+    document.getElementById("btnSubmit").onclick = function myFunction() {
+   var myText = document.getElementsByClassName("bottom-right");
+
+   const params = new URLSearchParams(window.location.search)
+var hello =  params.get('fname');
+alert(hello);
+
+   myText.innerHTML = `Howdy ${hello}`;
+    }
+
+    // to uppercase
+    function upperCase() {
+      const x = document.getElementById("fname");
+      x.value = x.value.toUpperCase();
+    }
+
+   const colour = document.getElementById("lname");
+   
+   colour.onkeydown = function(){
+     colour.style.backgroundColor = "pink"
+    };
+   
+    colour.onchange = function(){
+      if(colour !== '') {
+     colour.style.backgroundColor = "yellow"
+      } else {
+        colour.style.backgroundColor = "white" 
+      }
+    };
+  
+    // clear input on focus
+   var hobby = document.getElementById("hobby");
+  hobby.onfocus = function(){hobby.value = '';};
+   
+  
+    // alert
+    document.getElementById("btnSayHello").onclick = function sayHello() {
+      alert("Hello World")
+    };
+
+    // Create element
+
+    const buttonsContainer = document.getElementById("buttonsContainer");
+
+    for (var i = 0; i < 5; i++) {
+      const button = document.createElement("button");
+      button.innerText = i;
+
+      buttonsContainer.appendChild(button);
+    }
+
+
+  </script>
+
+</body>
+
+</html>

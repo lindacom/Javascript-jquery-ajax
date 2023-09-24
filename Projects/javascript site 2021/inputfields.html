@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Input fields</title>
+  <link rel="stylesheet" href="/css/jsplay.css">
+</head>
+
+<body>
+
+  <h1>JavaScript input fields</h1>
+
+  <div>
+    <table class="tblBooks">
+      <tr>
+        <th>ID</th>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Purchase</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><a href=" "> History book </a></td>
+        <td>Jones</td>
+        <td>History</td>
+        <td>&#163;9.99</td>
+        <td><input type="number" class="inptQuantity" id="historyPicker" name="quantity" value="0" placeholder="1" min="0" max="10"
+            style="width:50px" /></td>
+        <td> <button class="button btnBuy" id="historyButton" disabled
+            data-url="http://localhost:3000/inputfields.html?title=history&price=9.99&quantity=">Buy</button>
+        </td>
+      </tr>
+
+      <tr>
+        <td>2</td>
+        <td><a href=" "> Maths book </a></td>
+        <td>Smith</td>
+        <td>Maths</td>
+        <td>&#163;5.99</td>
+        <td><input type="number" class="inptQuantity" id="mathsPicker" name="quantity" value="0" placeholder="1" min="0" max="10"
+            style="width:50px" /></td>
+        <td> <button class="button btnBuy " id="mathsButton" disabled
+            data-url="http://localhost:3000/inputfields.html?title=maths&price=5.99&quantity=">Buy</button>
+        </td>
+
+      </tr>
+    </table>
+  </div>
+
+  <h2>Change quantity's value attribute</h2>
+  <td><input type="text" id="chgAttr" name="aQuantity" value="0" placeholder="1" min="0" max="10"
+    style="width:50px" /></td>
+
+  <script>
+
+var number = document.getElementById("chgAttr");
+number.addEventListener("change", (event) => {
+  const amount = event.target.value;
+  console.log(amount);
+  number.setAttribute("value", amount);
+});
+
+function changeAmount(inputId, buttonId) {
+      var input = document.getElementById(inputId);
+      var button = document.getElementById(buttonId); 
+
+      input.addEventListener("change", (event) => {
+          const value = event.target.value;
+          // console.log(value);
+
+          if(value == 0) {
+           button.disabled = true;
+          } else {
+            button.disabled = false;
+          }
+      });
+
+      button.addEventListener("click", (event) => {
+
+var url = button.dataset.url;
+var inptValue = input.value;
+window.location = url + inptValue;
+
+      });
+    }
+changeAmount("historyPicker", "historyButton");
+changeAmount("mathsPicker", "mathsButton");
+
+
+
+
+
+    // CHANGE VALUE OF INPUT FIELD AFTER USER INPUT - input triggers a change and the change amends value attribute 
+/*
+    var myInput = document.querySelectorAll(".inptQuantity");
+       var myButton = document.getElementsByClassName("btnBuy"); 
+
+    var qty = ''; 
+
+    // loop through input fields and set value
+    for (let i = 0; i < myInput.length; i++) {
+           myInput[i].addEventListener("input", (event) => {
+        qty = myInput[i].value; 
+       // purchase(qty);    
+      });       
+    }
+
+    // loop through buttons and get id 
+    var myButtonArray = [...document.getElementsByClassName("btnBuy")]; // spread operator puts buttons in an array  
+   
+    myButtonArray.forEach(button => {
+        let id = button.id;
+        
+            
+  /*    var inCart = [];
+    let cart = [];
+    inCart = cart.find(item => item.id === id);
+              
+         if(inCart) {
+button.innerText = "In Cart";
+button.disabled = true;
+} 
+
+button.addEventListener("click", event => {
+event.target.innerText= "In cart";
+event.target.disabled = true;
+inCart.push(id);
+console.log(inCart);
+});*/
+//});
+    
+
+
+
+
+     
+          /* for (let i = 0; i < myButtonArray.length; i++) {
+console.log(myButtonArray[i]);
+           }*/
+        //  var hi = mybutton[i];
+      //  mybutton[i].addEventListener("clicked", (event) => {
+              //  myButton.disabled = false; 
+                // var btnClicked = event.target;
+               // btnClicked.parentElement.parentElement.disabled = false;;
+        
+
+
+
+
+
+      /*  function purchase(qty) {
+    
+    if(qty !== '') {
+
+    }
+
+  
+
+  }*/
+
+
+
+
+  </script>
+
+</body>
+
+</html>

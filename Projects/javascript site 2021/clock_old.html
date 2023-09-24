@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<!-- tutorial: https://www.youtube.com/watch?v=x7WJEmxNlEs -->
+<html>
+<head>
+<title>JavaScript time</title>
+</head>
+<body>
+    <h1>Date, time and timing events</h1>
+    <p id="date"></p>
+    
+    
+    
+    
+    
+    <h2>Countdown</h2>
+    
+    <!-- timout using set interval function  -->
+
+    <form name="form_main" id="demo" style="font-size:50px; background-color:black;color:white;">
+        <div>
+          <span id="hour">00</span>:
+            <span id="minute">00</span>:
+               <span id="second">00</span>:
+                   <span id="millisecond">000</span>
+        </div>
+      
+        <br />
+      
+
+<p>Time remaining: <span id="time-remaining"></span></p>
+<button id="stop" class="button">stop timer</button>
+<button id="resume" class="button">Resume timer</button>
+<button id="reset" class="button">Reset timer</button>
+
+
+    </form>
+
+<script>
+
+var d = new Date();
+document.getElementById("date").innerHTML = d.toDateString();
+</script>
+
+
+<script>
+    // timer
+
+var startingMinutes = 10;
+let time = startingMinutes * 60;
+
+// const countdownEl = document.getElementById('time-remaining');
+const countdownHour = document.getElementById('hour');
+const countdownMinute = document.getElementById('minute');
+const countdownSecond = document.getElementById('second');
+const countdownMillisecond = document.getElementById('millisecond');
+
+myInterval = setInterval(updateCountdown, 1000);
+
+function updateCountdown() {
+const minutes = Math.floor(time /60);
+let seconds = time % 60;
+
+seconds = seconds < 10 ? '0' + seconds : seconds;
+
+// countdownEl.innerHTML = minutes + ':' + seconds;
+countdownMinute.innerText = minutes;
+countdownSecond.innerText = seconds;
+time--;
+}
+</script>
+
+<script>
+    // stop timer
+document.getElementById("stop").addEventListener('click', function() {
+    clearInterval(myInterval);  
+});
+
+ // resume timer
+document.getElementById("resume").addEventListener('click', function() {
+ myInterval = setInterval(updateCountdown, 1000);
+   
+});
+
+ // restart timer
+document.getElementById("reset").addEventListener('click', function() {
+    clearInterval(myInterval);
+ var startingMinutes = 10;
+let time = startingMinutes * 60;
+   
+   document.getElementById('time-remaining').innerHTML = startingMinutes;
+    myInterval = setInterval(updateCountdown, 1000);
+});
+</script>
+</body></html>
